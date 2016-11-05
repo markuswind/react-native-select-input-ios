@@ -12,7 +12,8 @@ Import ``react-native-keyboard-select-input-ios`` and wrap your content inside
 it:
 
 ```js
-import { SelectInputIOS } from 'react-native-select-input-ios'
+var SelectInputIOS = require('react-native-select-input-ios');
+
 ```
 
 Example usage:
