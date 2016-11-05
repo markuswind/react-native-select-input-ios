@@ -1,0 +1,27 @@
+{
+  "name": "react-native-select-input-ios",
+  "version": "0.0.1",
+  "description": "A ReactNative SelectInput for iOS, which uses a keyboard with a Picker component",
+  "main": "SelectInputIOS.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markuswind/react-native-select-input-ios.git"
+  },
+  "keywords": [
+    "React-Native",
+    "Select",
+    "SelectInput",
+    "SelectInputIOS",
+    "Picker",
+    "PickerIOS"
+  ],
+  "author": "Markus Wind",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markuswind/react-native-select-input-ios/issues"
+  },
+  "homepage": "https://github.com/markuswind/react-native-select-input-ios#readme"
+}
