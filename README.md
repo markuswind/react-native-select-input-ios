@@ -8,7 +8,7 @@ A React Native SelectInput for iOS which shows the picker as a keyboard.
 `npm install react-native-select-input-ios --save`
 
 ### Screenshot
-<img src="https://raw.github.com/markuswind/react-native-select-input-ios/master/screenshots/screenshot.png" alt="Screenshot" style="width: 275px;"/>
+<img src="https://raw.github.com/markuswind/react-native-select-input-ios/master/screenshots/screenshot.png" alt="Screenshot" | width=300px/>
 
 ### Usage
 Import ``react-native-keyboard-select-input-ios`` and wrap your content inside
