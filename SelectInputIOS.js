@@ -21,6 +21,7 @@ var SelectInputIOS = React.createClass({
 
     focus: function() {
         this.refs.pickerkeyboard.focus();
+        this.props.onBeginEditing && this.props.onBeginEditing();
     },
 
     onSubmit: function(value) {
@@ -29,9 +30,6 @@ var SelectInputIOS = React.createClass({
     },
 
     render: function() {
-        var options = this.props.options || [{value: '', label: ''}];
-        var color   = this.props.color   || 'blue'
-
         return (
             <View>
                 <Text onPress={this.focus} style={this.props.style || styles.default}>
@@ -40,10 +38,12 @@ var SelectInputIOS = React.createClass({
 
                 <PickerKeyboard
                     ref={'pickerkeyboard'}
-                    color={color}
-                    options={options}
+                    color={this.props.color || 'blue'}
+                    options={this.props.options || [{value: '', label: ''}]}
                     value={this.state.value}
                     onSubmit={this.onSubmit}
+                    buttonsBackgroundColor={this.props.buttonsBackgroundColor}
+                    keyboardBackgroundColor={this.props.keyboardBackgroundColor}
                     returnKeyText={this.props.returnKeyText || 'Done'}
                     cancelKeyText={this.props.cancelKeyText || 'Cancel'}
                 />

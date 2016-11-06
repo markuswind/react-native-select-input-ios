@@ -40,21 +40,23 @@ var PickerKeyboard = React.createClass({
     },
 
     render: function() {
+        var props = this.props;
+
         return (
             <Modal animationType={'slide'} transparent={true} visible={this.state.visible}>
                 <View style={styles.container}>
                     <View style={styles.modal}>
-                        <View style={styles.buttonview}>
+                        <View style={[styles.buttonview, {backgroundColor: props.buttonsBackgroundColor}]}>
                             <TouchableOpacity onPress={this.onCancelPressed}>
-                                <Text style={{color: this.props.color}}>{this.props.cancelKeyText}</Text>
+                                <Text style={{color: props.color}}>{props.cancelKeyText}</Text>
                             </TouchableOpacity>
 
                             <TouchableOpacity onPress={this.onSubmitPressed}>
-                                <Text style={{color: this.props.color}}>{this.props.returnKeyText}</Text>
+                                <Text style={{color: props.color}}>{props.returnKeyText}</Text>
                             </TouchableOpacity>
                         </View>
                         <View>
-                            <Picker ref={'picker'} style={styles.picker_bottom} selectedValue={this.state.value} onValueChange={this.onValueChange}>
+                            <Picker ref={'picker'} style={[styles.picker_bottom, {backgroundColor: props.keyboardBackgroundColor}]} selectedValue={this.state.value} onValueChange={this.onValueChange}>
                                 {this.getPickerItems()}
                             </Picker>
                         </View>
