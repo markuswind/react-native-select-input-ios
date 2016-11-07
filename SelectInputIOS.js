@@ -30,6 +30,10 @@ var SelectInputIOS = React.createClass({
         });
     },
 
+    onCancel: function() {
+        this.props.EndEditing && this.props.onEndEditing();
+    },
+
     render: function() {
         return (
             <View>
@@ -42,6 +46,7 @@ var SelectInputIOS = React.createClass({
                     color={this.props.color || 'blue'}
                     options={this.props.options || [{value: '', label: ''}]}
                     value={this.props.value}
+                    onCancel={this.onCancel}
                     onSubmit={this.onSubmit}
                     buttonsBackgroundColor={this.props.buttonsBackgroundColor}
                     keyboardBackgroundColor={this.props.keyboardBackgroundColor}

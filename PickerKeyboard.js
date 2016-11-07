@@ -28,11 +28,12 @@ var PickerKeyboard = React.createClass({
 
     onCancelPressed: function() {
         this.setState({visible: false});
+        this.props.onCancel();
     },
 
     onSubmitPressed: function() {
-        this.props.onSubmit && this.props.onSubmit(this.state.value);
         this.setState({visible: false});
+        this.props.onSubmit(this.state.value);
     },
 
     onValueChange: function(value) {
