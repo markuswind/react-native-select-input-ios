@@ -15,7 +15,7 @@ var View           = require('react-native').View;
 var SelectInputIOS = React.createClass({
     getInitialState: function() {
         return {
-            value: this.props.value || ''
+            selectedValue: this.props.value || ''
         };
     },
 
@@ -25,8 +25,9 @@ var SelectInputIOS = React.createClass({
     },
 
     onSubmit: function(value) {
-        this.setState({value: value});
-        this.props.onEndEditing && this.props.onEndEditing();
+        this.setState({selectedValue: value}, function() {
+            this.props.onEndEditing && this.props.onEndEditing();
+        });
     },
 
     render: function() {
@@ -40,7 +41,7 @@ var SelectInputIOS = React.createClass({
                     ref={'pickerkeyboard'}
                     color={this.props.color || 'blue'}
                     options={this.props.options || [{value: '', label: ''}]}
-                    value={this.state.value}
+                    value={this.props.value}
                     onSubmit={this.onSubmit}
                     buttonsBackgroundColor={this.props.buttonsBackgroundColor}
                     keyboardBackgroundColor={this.props.keyboardBackgroundColor}
@@ -56,7 +57,7 @@ var SelectInputIOS = React.createClass({
         var options = this.props.options || [{value: '', label: ''}];
 
         for(var index = 0; index < options.length; index++) {
-            if(options[index].value == this.state.value) {
+            if(options[index].value == this.props.value) {
                 label = options[index].label;
                 break;
             }

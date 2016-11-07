@@ -32,11 +32,24 @@ var options = [
   { value: 'strawberry', label: 'Strawberry' }
 ];
 
+getInitialState() {
+    return {
+        value: 'orange'
+    };
+},
+
+onEndEditing() {
+    this.setState({
+        value: this.refs.selectinput.state.selectedValue
+    });
+},
+
 render() {
   return (
     <View style={styles.container}>
       <SelectInputIOS
-        value={'orange'}
+        ref={'selectinput'}
+        value={this.state.value}
         options={options}
         color={'#FF8000'}
         returnKeyText={'customReturnKeyText'}
@@ -44,7 +57,7 @@ render() {
         buttonsBackgroundColor={'#F2F2F2'}
         keyboardBackgroundColor={'#F8F8F8'}
         onBeginEditing={() => console.log('onBeginEditing')}
-        onEndEditing={() => console.log('onEndEditing')}
+        onEndEditing=this.onEndEditing
       />
     </View>
   );
@@ -65,6 +78,11 @@ render() {
 | `keyboardBackgroundColor` | `string`         | '#F8F8F8'   | Changed the background color of the keyboard pickerview                                  |
 | `onBeginEditing`          | `PropTypes.func` | undefined   | Callback that is called when select input starts                                         |
 | `onEndEditing`            | `PropTypes.func` | undefined   | Callback that is called when select input ends.                                          |
+
+### Methods
+| **Name**  | **Description**             |
+|-----------|-----------------------------|
+| `focus`   | Toggle the picker keyboard  |
 
 ## License
 
