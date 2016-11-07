@@ -24,14 +24,14 @@ var SelectInputIOS = React.createClass({
         this.props.onBeginEditing && this.props.onBeginEditing();
     },
 
+    onCancel: function() {
+        this.props.onEndEditing && this.props.onEndEditing();
+    },
+
     onSubmit: function(value) {
         this.setState({selectedValue: value}, function() {
             this.props.onEndEditing && this.props.onEndEditing();
         });
-    },
-
-    onCancel: function() {
-        this.props.EndEditing && this.props.onEndEditing();
     },
 
     render: function() {
