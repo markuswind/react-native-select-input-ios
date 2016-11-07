@@ -1,6 +1,6 @@
 {
   "name": "react-native-select-input-ios",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A ReactNative SelectInput for iOS, which uses a keyboard with a Picker component",
   "main": "SelectInputIOS.js",
   "scripts": {
