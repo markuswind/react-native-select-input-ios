@@ -4,6 +4,7 @@
   "description": "A ReactNative SelectInput for iOS, which uses a keyboard with a Picker component",
   "main": "SelectInputIOS.js",
   "scripts": {
+    "lint": "eslint *.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,7 +12,7 @@
     "url": "git+https://github.com/markuswind/react-native-select-input-ios.git"
   },
   "keywords": [
-    "React-Native",
+    "ReactNative",
     "Select",
     "SelectInput",
     "SelectInputIOS",
@@ -23,5 +24,13 @@
   "bugs": {
     "url": "https://github.com/markuswind/react-native-select-input-ios/issues"
   },
-  "homepage": "https://github.com/markuswind/react-native-select-input-ios#readme"
+  "homepage": "https://github.com/markuswind/react-native-select-input-ios#readme",
+  "devDependencies": {
+    "babel-eslint": "^6.1.0",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "9.0.1",
+    "eslint-plugin-import": "1.9.2",
+    "eslint-plugin-jsx-a11y": "1.5.3",
+    "eslint-plugin-react": "^5.2.2"
+  }
 }

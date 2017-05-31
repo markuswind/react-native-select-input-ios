@@ -3,18 +3,12 @@
  * https://github.com/markuswind/react-native-select-input
  */
 
-
-import PickerKeyboard from ('./PickerKeyboard.js');
+import PickerKeyboard from './PickerKeyboard.js';
 import styles from './stylesheets/selectInputIOS.css.js';
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
-import {
-  AppRegistry,
-  Text,
-  View
-} from 'react-native';
+import { Text, View } from 'react-native';
 
 class SelectInputIOS extends Component {
   // getDefaultProps() {
@@ -85,8 +79,8 @@ class SelectInputIOS extends Component {
     var label = '';
     var options = props.options || [{value: '', label: ''}];
 
-    for(var index = 0; index < options.length; index++) {
-      if(options[index].value == props.value) {
+    for (var index = 0; index < options.length; index++) {
+      if (options[index].value === props.value) {
         label = options[index].label;
         break;
       }
@@ -94,11 +88,11 @@ class SelectInputIOS extends Component {
 
     return label;
   }
-});
+}
 
 SelectInputIOS.propTypes = {
   buttonsBackgroundColor: PropTypes.string,
-  cancelKeyText: PropTypes.string
+  cancelKeyText: PropTypes.string,
   color: PropTypes.string,
   keyboardBackgroundColor: PropTypes.string,
   onCancel: PropTypes.func,
