@@ -13,6 +13,15 @@ import {
 } from 'react-native';
 
 export default class example extends Component {
+  getPickerOptions() {
+    return [
+      { value: 0, label:  'Apple'      },
+      { value: 1, label:  'Banana'     },
+      { value: 2, label:  'Orange'     },
+      { value: 3, label:  'Strawberry' }
+    ];
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -33,20 +42,20 @@ export default class example extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flex:                     1,
+    justifyContent:           'center',
+    alignItems:               'center',
+    backgroundColor:          '#F5FCFF',
   },
   welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    margin:                   10,
+    fontSize:                 20,
+    textAlign:                'center',
   },
   instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    marginBottom:             5,
+    textAlign:                'center',
+    color:                    '#333333',
   },
 });
 

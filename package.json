@@ -2,7 +2,7 @@
   "name": "react-native-select-input-ios",
   "version": "0.0.5",
   "description": "A ReactNative SelectInput for iOS, which uses a keyboard with a Picker component",
-  "main": "SelectInputIOS.js",
+  "main": "./src/SelectInputIOS.js",
   "scripts": {
     "lint": "eslint *.js",
     "test": "echo \"Error: no test specified\" && exit 1"

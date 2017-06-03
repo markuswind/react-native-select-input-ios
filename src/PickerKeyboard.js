@@ -51,16 +51,14 @@ class PickerKeyboard extends Component {
   }
 
   getPickerProps() {
-    let pickerProps = {
-      selectedValue: {this.state.value}
-      onValueChange: {this.onValueChange}
-      style: [
-        styles.picker_bottom,
-        { backgroundColor: this.props.keyboardBackgroundColor }
-      ]
-    };
-
-    return pickerProps;
+    // let pickerProps = {
+    //   selectedValue: {this.state.value}
+    //   onValueChange: {this.onValueChange}
+    //   style: [
+    //     styles.picker_bottom,
+    //     { backgroundColor: this.props.keyboardBackgroundColor }
+    //   ]
+    // };
   }
 
   getPickerItems() {
