@@ -4,15 +4,33 @@
  * @flow
  */
 
+import SelectInputIOS from 'react-native-select-input-ios';
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
 
 export default class example extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: 1
+    };
+  }
+
+  // onCancel() {
+  //   console.log('onCancel');
+  // }
+
+  onSubmit(value) {
+    this.setState({
+      value: value
+    });
+  }
+
   getPickerOptions() {
     return [
       { value: 0, label:  'Apple'      },
@@ -25,16 +43,13 @@ export default class example extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <SelectInputIOS
+          ref={(c) => { this.selectInput = c; }}
+          value={this.state.value}
+          options={this.getPickerOptions()}
+          onCancel={() => console.log('onCancel')}
+          onSubmit={this.onSubmit}
+        />
       </View>
     );
   }
@@ -46,16 +61,6 @@ const styles = StyleSheet.create({
     justifyContent:           'center',
     alignItems:               'center',
     backgroundColor:          '#F5FCFF',
-  },
-  welcome: {
-    margin:                   10,
-    fontSize:                 20,
-    textAlign:                'center',
-  },
-  instructions: {
-    marginBottom:             5,
-    textAlign:                'center',
-    color:                    '#333333',
   },
 });
 

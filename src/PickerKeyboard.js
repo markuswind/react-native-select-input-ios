@@ -50,17 +50,6 @@ class PickerKeyboard extends Component {
     });
   }
 
-  getPickerProps() {
-    // let pickerProps = {
-    //   selectedValue: {this.state.value}
-    //   onValueChange: {this.onValueChange}
-    //   style: [
-    //     styles.picker_bottom,
-    //     { backgroundColor: this.props.keyboardBackgroundColor }
-    //   ]
-    // };
-  }
-
   getPickerItems() {
     return this.props.options.map((option, index) => {
       return (
@@ -75,44 +64,53 @@ class PickerKeyboard extends Component {
 
   render() {
     let props = this.props;
+    let state = this.state;
 
-    return (
-      <Modal animationType={'slide'} transparent={true} visible={this.state.visible}>
-        <View style={styles.container}>
-          <View style={styles.modal}>
-            <View style={[styles.buttonview, { backgroundColor: props.buttonsBackgroundColor }]}>
-              <TouchableOpacity onPress={this.onCancelPressed}>
-                <Text style={{color: props.color}}>
-                  {props.cancelKeyText}
-                </Text>
-              </TouchableOpacity>
+    return null;
+      // <Modal animationType={'slide'} transparent={true} visible={this.state.visible}>
+      //   <View style={styles.container}>
+      //     <View style={styles.modal}>
+      //       <View style={[styles.buttonview, { backgroundColor: props.buttonsBackgroundColor }]}>
+      //         <TouchableOpacity onPress={this.onCancelPressed}>
+      //           <Text style={{color: props.color}}>
+      //             {props.cancelKeyText}
+      //           </Text>
+      //         </TouchableOpacity>
 
-              <TouchableOpacity onPress={this.onSubmitPressed}>
-                <Text style={{color: props.color}}>{props.returnKeyText}</Text>
-              </TouchableOpacity>
-            </View>
+      //         <TouchableOpacity onPress={this.onSubmitPressed}>
+      //           <Text style={{color: props.color}}>{props.returnKeyText}</Text>
+      //         </TouchableOpacity>
+      //       </View>
 
-            <View>
-              <Picker ref={'picker'} ...this.getPickerProps()>
-                {this.getPickerItems()}
-              </Picker>
-            </View>
-          </View>
-        </View>
-      </Modal>
-    )
+      //       // <View>
+      //       //   <Picker
+      //       //     ref={(c) => { this.picker = c; }}
+      //       //     selectedValue={state.value}
+      //       //     onValueChange={this.onValueChange}
+      //       //     style={[
+      //       //       styles.picker_bottom,
+      //       //       { backgroundColor: this.props.keyboardBackgroundColor }
+      //       //     ]}
+      //       //   >
+      //       //     {...this.getPickerItems()}
+      //       //   </Picker>
+      //       // </View>
+      //     // </View>
+      //   </View>
+      // </Modal>
+    // );
   }
-});
+}
 
 PickerKeyboard.propTypes = {
   buttonsBackgroundColor: PropTypes.string,
-  cancelKeyText: PropTypes.string,
-  onEndEditting: PropTypes.func,
-  onSubmitEditting: PropTypes.func,
-  options: PropTypes.array,
-  returnKeyText: PropTypes.string,
-  style: PropTypes.object,
-  value: PropTypes.string,
+  cancelKeyText:          PropTypes.string,
+  onEndEditting:          PropTypes.func,
+  onSubmitEditting:       PropTypes.func,
+  options:                PropTypes.array,
+  returnKeyText:          PropTypes.string,
+  style:                  PropTypes.object,
+  value:                  PropTypes.string,
 };
 
 export default PickerKeyboard;

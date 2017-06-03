@@ -11,15 +11,17 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
 class SelectInputIOS extends Component {
-  // getDefaultProps() {
-    // cancelKeyText: 'Cancel',
-    // color: 'blue',
-    // keyboardBackgroundColor: PropTypes.string,
-    // buttonsBackgroundColor:  PropTypes.string,
-    // options:                 PropTypes.array,
-    // returnKeyText: 'Done',
-    // value:                   PropTypes.string,
-  // }
+  getDefaultProps() {
+    return {
+      cancelKeyText:           'Cancel',
+      color:                   'blue',
+      keyboardBackgroundColor: '#FF0000',
+      buttonsBackgroundColor:  '#00FF00',
+      options:                 [{ value: 0, label: '0' }],
+      returnKeyText:           'Done',
+      value:                   0
+    };
+  }
 
   getInitialState() {
     return {
@@ -30,7 +32,7 @@ class SelectInputIOS extends Component {
   focus() {
     let props = this.props;
 
-    this.refs.pickerkeyboard.focus();
+    this.pickerKeyboard.focus();
     props.onBeginEditing && props.onBeginEditing();
   }
 
@@ -41,10 +43,10 @@ class SelectInputIOS extends Component {
   }
 
   onSubmitEditing(value) {
-    var props = this.props;
+    let onSubmitEditing = this.props.onSubmitEditing;
 
     this.setState({selectedValue: value}, function() {
-      props.onSubmitEditing && props.onSubmitEditing();
+      onSubmitEditing && onSubmitEditing(value);
     });
   }
 
@@ -58,7 +60,7 @@ class SelectInputIOS extends Component {
         </Text>
 
         <PickerKeyboard
-          ref={'pickerkeyboard'}
+          ref={(c) => { this.pickerKeyboard = c; }}
           color={props.color || 'blue'}
           options={props.options || [{value: '', label: ''}]}
           value={props.value}
@@ -75,31 +77,28 @@ class SelectInputIOS extends Component {
 
   getValueLabel() {
     let props = this.props;
+    let options = props.options || [{value: '', label: ''}];
 
-    var label = '';
-    var options = props.options || [{value: '', label: ''}];
-
-    for (var index = 0; index < options.length; index++) {
-      if (options[index].value === props.value) {
-        label = options[index].label;
-        break;
+    var label = options.map(function(objc) {
+      if (objc.value === props.value) {
+        return objc.label;
       }
-    }
+    });
 
-    return label;
+    return label || '';
   }
 }
 
 SelectInputIOS.propTypes = {
-  buttonsBackgroundColor: PropTypes.string,
-  cancelKeyText: PropTypes.string,
-  color: PropTypes.string,
+  buttonsBackgroundColor:  PropTypes.string,
+  cancelKeyText:           PropTypes.string,
+  color:                   PropTypes.string,
   keyboardBackgroundColor: PropTypes.string,
-  onCancel: PropTypes.func,
-  onSubmit: PropTypes.func,
-  options: PropTypes.array.isRequired,
-  returnKeyText: PropTypes.string,
-  value: PropTypes.string,
+  onCancel:                PropTypes.func,
+  onSubmit:                PropTypes.func,
+  options:                 PropTypes.array.isRequired,
+  returnKeyText:           PropTypes.string,
+  value:                   PropTypes.string,
 };
 
 export default SelectInputIOS;
