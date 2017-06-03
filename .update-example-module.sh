@@ -8,6 +8,7 @@ while getopts ":t" opt; do
     ;;
   \?)
     echo "Invalid option: -$OPTARG" >&2
+      exit 1
     ;;
   esac
 done
@@ -29,3 +30,5 @@ if [ "$RUN_TEST" = true ]; then
 fi
 
 echo "🔧  - done!"
+
+exit 0
