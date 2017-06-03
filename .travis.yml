@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "5"
+
+install:
+  - ./travis
+  - npm install
+
+script:
+  - npm test
+
+branches:
+  only:
+    - master

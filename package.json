@@ -5,7 +5,7 @@
   "main": "./src/SelectInputIOS.js",
   "scripts": {
     "lint": "eslint *.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd example && jest"
   },
   "repository": {
     "type": "git",
