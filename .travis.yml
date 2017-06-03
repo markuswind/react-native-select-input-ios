@@ -4,6 +4,7 @@ node_js:
 
 install:
   - npm install
+  - cd example && npm install
 
 script:
   - npm test
