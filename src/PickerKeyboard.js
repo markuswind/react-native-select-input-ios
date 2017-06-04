@@ -17,10 +17,12 @@ import {
 } from 'react-native';
 
 class PickerKeyboard extends Component {
-  getInitialState() {
-    return {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: props.value,
       visible: false,
-      value: this.props.value,
     };
   }
 
@@ -29,13 +31,17 @@ class PickerKeyboard extends Component {
   }
 
   onCancelPressed() {
+    let onCancel = this.props.onCancel;
+
     this.setVisible(false);
-    this.props.onCancel();
+    onCancel && onCancel();
   }
 
   onSubmitPressed() {
+    let onSubmit = this.props.onSubmit;
+
     this.setVisible(false);
-    this.props.onSubmit(this.state.value);
+    onSubmit && onSubmit(this.state.value);
   }
 
   onValueChange(value) {
@@ -66,39 +72,25 @@ class PickerKeyboard extends Component {
     let props = this.props;
     let state = this.state;
 
-    return null;
-      // <Modal animationType={'slide'} transparent={true} visible={this.state.visible}>
-      //   <View style={styles.container}>
-      //     <View style={styles.modal}>
-      //       <View style={[styles.buttonview, { backgroundColor: props.buttonsBackgroundColor }]}>
-      //         <TouchableOpacity onPress={this.onCancelPressed}>
-      //           <Text style={{color: props.color}}>
-      //             {props.cancelKeyText}
-      //           </Text>
-      //         </TouchableOpacity>
+    return (
+      <Modal animationType={'slide'} transparent={true} visible={state.visible}>
+        <View style={styles.container}>
+          <View style={styles.modal}>
+            <View style={[styles.buttonview, { backgroundColor: props.buttonsBackgroundColor }]}>
+              <TouchableOpacity onPress={this.onCancelPressed.bind(this)}>
+                <Text style={{color: props.color}}>
+                  {props.cancelKeyText}
+                </Text>
+              </TouchableOpacity>
 
-      //         <TouchableOpacity onPress={this.onSubmitPressed}>
-      //           <Text style={{color: props.color}}>{props.returnKeyText}</Text>
-      //         </TouchableOpacity>
-      //       </View>
-
-      //       // <View>
-      //       //   <Picker
-      //       //     ref={(c) => { this.picker = c; }}
-      //       //     selectedValue={state.value}
-      //       //     onValueChange={this.onValueChange}
-      //       //     style={[
-      //       //       styles.picker_bottom,
-      //       //       { backgroundColor: this.props.keyboardBackgroundColor }
-      //       //     ]}
-      //       //   >
-      //       //     {...this.getPickerItems()}
-      //       //   </Picker>
-      //       // </View>
-      //     // </View>
-      //   </View>
-      // </Modal>
-    // );
+              <TouchableOpacity onPress={this.onSubmitPressed.bind(this)}>
+                <Text style={{color: props.color}}>{props.returnKeyText}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+    );
   }
 }
 
@@ -110,7 +102,7 @@ PickerKeyboard.propTypes = {
   options:                PropTypes.array,
   returnKeyText:          PropTypes.string,
   style:                  PropTypes.object,
-  value:                  PropTypes.string,
+  value:                  PropTypes.any,
 };
 
 export default PickerKeyboard;

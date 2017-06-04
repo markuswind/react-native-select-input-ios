@@ -11,28 +11,23 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
 class SelectInputIOS extends Component {
-  getDefaultProps() {
-    return {
-      cancelKeyText:           'Cancel',
-      color:                   'blue',
-      keyboardBackgroundColor: '#FF0000',
-      buttonsBackgroundColor:  '#00FF00',
-      options:                 [{ value: 0, label: '0' }],
-      returnKeyText:           'Done',
-      value:                   0
-    };
-  }
+  constructor(props) {
+    super(props);
 
-  getInitialState() {
-    return {
-      selectedValue: this.props.value || ''
+    // refs
+    this.pickerKeyboard = null;
+
+    // initial state
+    this.state = {
+      selectedValue: props.value
     };
   }
 
   focus() {
     let props = this.props;
+    let pickerKeyboard = this.pickerKeyboard;
 
-    this.pickerKeyboard.focus();
+    pickerKeyboard && pickerKeyboard.focus();
     props.onBeginEditing && props.onBeginEditing();
   }
 
@@ -55,21 +50,21 @@ class SelectInputIOS extends Component {
 
     return (
       <View>
-        <Text onPress={this.focus} style={props.style || styles.default}>
+        <Text onPress={this.focus.bind(this)} style={props.style || styles.default}>
           {this.getValueLabel()}
         </Text>
 
         <PickerKeyboard
           ref={(c) => { this.pickerKeyboard = c; }}
-          color={props.color || 'blue'}
-          options={props.options || [{value: '', label: ''}]}
+          color={props.color}
+          options={props.options}
           value={props.value}
           onEndEditing={this.onEndEditing}
           onSubmitEditing={this.onSubmitEditing}
           buttonsBackgroundColor={props.buttonsBackgroundColor}
           keyboardBackgroundColor={props.keyboardBackgroundColor}
-          returnKeyText={props.returnKeyText || 'Done'}
-          cancelKeyText={props.cancelKeyText || 'Cancel'}
+          returnKeyText={props.returnKeyText}
+          cancelKeyText={props.cancelKeyText}
         />
       </View>
     );
@@ -79,9 +74,9 @@ class SelectInputIOS extends Component {
     let props = this.props;
     let options = props.options || [{value: '', label: ''}];
 
-    var label = options.map(function(objc) {
-      if (objc.value === props.value) {
-        return objc.label;
+    var label = options.map(function(object) {
+      if (object.value === props.value) {
+        return object.label;
       }
     });
 
@@ -96,9 +91,19 @@ SelectInputIOS.propTypes = {
   keyboardBackgroundColor: PropTypes.string,
   onCancel:                PropTypes.func,
   onSubmit:                PropTypes.func,
-  options:                 PropTypes.array.isRequired,
+  options:                 PropTypes.array,
   returnKeyText:           PropTypes.string,
-  value:                   PropTypes.string,
+  value:                   PropTypes.any,
+};
+
+SelectInputIOS.defaultProps = {
+  cancelKeyText:           'Cancel',
+  color:                   'blue',
+  keyboardBackgroundColor: '#FF0000',
+  buttonsBackgroundColor:  '#00FF00',
+  options:                 [{ value: 0, label: '0' }],
+  returnKeyText:           'Done',
+  value:                   0
 };
 
 export default SelectInputIOS;
