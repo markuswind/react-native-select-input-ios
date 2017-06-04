@@ -3,10 +3,11 @@ node_js:
   - "5"
 
 install:
-  - cd example && npm install
+  - cd example
+  - npm install
 
 script:
-  - cd example && npm test
+  - npm test
 
 branches:
   only:
