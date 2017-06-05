@@ -4,6 +4,7 @@ node_js:
 
 install:
   - npm install eslint
+  - npm install eslint-plugin-react
   - cd example && npm install
   - cd ../
 
