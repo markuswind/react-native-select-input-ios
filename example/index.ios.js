@@ -10,7 +10,8 @@ import {
   AppRegistry,
   Dimensions,
   StyleSheet,
-  View
+  ScrollView,
+  Text
 } from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -34,13 +35,13 @@ export default class example extends Component {
 
   onSubmitEditingMedium(value) {
     this.setState({
-      valueSmall: value
+      valueMedium: value
     });
   }
 
   onSubmitEditingLarge(value) {
     this.setState({
-      valueSmall: value
+      valueLarge: value
     });
   }
 
@@ -57,60 +58,77 @@ export default class example extends Component {
     let state = this.state;
 
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollViewContentContainer}>
+        <Text style={styles.label}>
+          Small input
+        </Text>
+
         <SelectInputIOS
           value={state.valueSmall}
           options={this.getPickerOptions()}
           onCancelEditing={() => console.log('onCancel')}
           onSubmitEditing={this.onSubmitEditingSmall.bind(this)}
-          style={styles.selectInputSmall}
+          style={[styles.selectInput, styles.selectInputSmall]}
         />
+
+        <Text style={styles.label}>
+          Medium input
+        </Text>
 
         <SelectInputIOS
           value={state.valueMedium}
           options={this.getPickerOptions()}
           onCancelEditing={() => console.log('onCancel')}
           onSubmitEditing={this.onSubmitEditingMedium.bind(this)}
-          style={styles.selectInputMedium}
+          style={[styles.selectInput, styles.selectInputMedium]}
         />
+
+        <Text style={styles.label}>
+          Large input
+        </Text>
 
         <SelectInputIOS
           value={state.valueLarge}
           options={this.getPickerOptions()}
           onCancelEditing={() => console.log('onCancel')}
           onSubmitEditing={this.onSubmitEditingLarge.bind(this)}
-          style={styles.selectInputLarge}
+          style={[styles.selectInput, styles.selectInputLarge]}
         />
-      </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  scrollViewContentContainer: {
     flex:                     1,
     width:                    SCREEN_WIDTH,
+    padding:                  16,
     flexDirection:            'column',
-    justifyContent:           'center',
-    backgroundColor:          '#F5FCFF',
+    justifyContent:           'flex-start',
+  },
+  label: {
+    fontSize:                 13,
+    marginTop:                16,
+  },
+  selectInput: {
+    flexDirection:            'row',
+    borderWidth:              1,
+    padding:                  8,
+    marginTop:                16,
   },
   selectInputSmall: {
+    flexDirection:            'row',
     width:                    SCREEN_WIDTH * 0.25,
     height:                   30,
-    borderWidth:              1,
-    margin:                   16
   },
   selectInputMedium: {
     width:                    SCREEN_WIDTH * 0.5,
     height:                   36,
-    borderWidth:              1,
-    margin:                   16
   },
   selectInputLarge: {
     width:                    SCREEN_WIDTH - 32,
     height:                   44,
-    borderWidth:              1,
-    margin:                   16
   }
 });
 

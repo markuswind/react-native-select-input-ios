@@ -28,7 +28,9 @@ class PickerKeyboard extends Component {
   }
 
   focus() {
-    this.customKeyboard.setVisible(true);
+    this.setState({
+      visible: true
+    });
   }
 
   onCancelPress() {
@@ -47,29 +49,17 @@ class PickerKeyboard extends Component {
     });
   }
 
-  getPickerItems() {
-    return this.props.options.map((option, index) => {
-      return (
-        <Picker.Item
-          key={option.value}
-          value={option.value}
-          label={option.label}
-        />
-      );
-    });
-  }
-
   render() {
     let props = this.props;
     let state = this.state;
 
     return (
       <CustomKeyboard
-        ref={(c) => { this.customKeyboard = c; }}
         buttonsBackgroundColor={props.buttonsBackgroundColor}
         buttonsTextColor={props.buttonsTextColor}
         onCancelPress={this.onCancelPress.bind(this)}
         onSubmitPress={this.onSubmitPress.bind(this)}
+        visible={this.state.visible}
         >
         <Picker
           ref={(c) => { this.picker = c; }}
@@ -77,10 +67,10 @@ class PickerKeyboard extends Component {
           onValueChange={this.onValueChange.bind(this)}
           style={[
             styles.pickerview,
-            { backgroundColor: this.props.keyboardBackgroundColor }
+            { backgroundColor: props.keyboardBackgroundColor }
           ]}
           >
-            {this.props.options.map((option, index) => {
+            {props.options.map((option, index) => {
               return (
                 <Picker.Item
                   key={option.value}

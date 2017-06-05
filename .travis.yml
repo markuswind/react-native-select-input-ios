@@ -9,7 +9,7 @@ install:
   - cd ../
 
 script:
-  - eslint .
+# - eslint .
   - cd example && npm test
 
 branches:

@@ -3,13 +3,14 @@ import {
 } from 'react-native';
 
 const styles = StyleSheet.create({
-  default: {
-    flex:                       1,
-    height:                     26,
-    padding:                    4,
+  defaultcontainerstyle: {
+    flexDirection:              'column',
+    justifyContent:             'center',
+  },
+  defaultlabelstyle: {
+    alignSelf:                  'center',
     fontSize:                   13,
-    borderWidth:                0.5,
-    borderColor:                '#0f0f0f'
+    backgroundColor:            '#FFFF00',
   },
 });
 

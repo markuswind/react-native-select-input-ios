@@ -21,18 +21,24 @@ class CustomKeyboard extends Component {
      super(props);
 
     this.state = {
-      visible: false,
+      visible: props.visible
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    let visible = nextProps.visible;
+
+    (visible !== this.state.visible) &&  this.setVisible(visible);
+  }
+
   onCancelPress() {
+    this.props.onCancelPress();
     this.setVisible(false);
-    this.props.onSubmitPress();
   }
 
   onSubmitPress() {
-    this.setVisible(false);
     this.props.onSubmitPress();
+    this.setVisible(false);
   }
 
   setVisible(visible) {
@@ -80,6 +86,7 @@ CustomKeyboard.propTypes =  {
   buttonTextColor:        PropTypes.string,
   onCancelPress:          PropTypes.func.isRequired,
   onSubmitPress:          PropTypes.func.isRequired,
+  visible:                PropTypes.bool.isRequired,
 };
 
 export default CustomKeyboard;

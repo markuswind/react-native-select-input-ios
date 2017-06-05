@@ -8,7 +8,7 @@ import styles from './stylesheets/selectInputIOS.css.js';
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, TouchableWithoutFeedback, View } from 'react-native';
 
 class SelectInputIOS extends Component {
   constructor(props) {
@@ -52,25 +52,33 @@ class SelectInputIOS extends Component {
   render() {
     let props = this.props;
 
+    // TODO: - add fully customizable styles
     return (
-      <View>
-        <Text onPress={this.focus.bind(this)} style={props.style || styles.default}>
-          {this.getValueLabel()}
-        </Text>
+      <TouchableWithoutFeedback onPress={this.focus.bind(this)}>
+        <View style={props.style}>
+          <Text
+            style={styles.defaultlabelstyle}
+            adjustFontSizeToFit={true}
+            allowsFontScaling={false}
+            numberOfLines={1}
+            >
+            {this.getValueLabel()}
+          </Text>
 
-        <PickerKeyboard
-          ref={(c) => { this.pickerKeyboard = c; }}
-          options={props.options}
-          value={props.value}
-          onCancel={this.onCancel.bind(this)}
-          onSubmit={this.onSubmit.bind(this)}
-          buttonsBackgroundColor={props.buttonsBackgroundColor}
-          buttonsTextColor={props.buttonsTextColor}
-          keyboardBackgroundColor={props.keyboardBackgroundColor}
-          returnKeyText={props.returnKeyText}
-          cancelKeyText={props.cancelKeyText}
-        />
-      </View>
+          <PickerKeyboard
+            ref={(c) => { this.pickerKeyboard = c; }}
+            options={props.options}
+            value={props.value}
+            onCancel={this.onCancel.bind(this)}
+            onSubmit={this.onSubmit.bind(this)}
+            buttonsBackgroundColor={props.buttonsBackgroundColor}
+            buttonsTextColor={props.buttonsTextColor}
+            keyboardBackgroundColor={props.keyboardBackgroundColor}
+            returnKeyText={props.returnKeyText}
+            cancelKeyText={props.cancelKeyText}
+          />
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 
