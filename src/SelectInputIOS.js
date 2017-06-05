@@ -23,6 +23,10 @@ class SelectInputIOS extends Component {
     };
   }
 
+  getValue() {
+    return this.state.selectedValue;
+  }
+
   focus() {
     let props = this.props;
     let pickerKeyboard = this.pickerKeyboard;
@@ -31,13 +35,13 @@ class SelectInputIOS extends Component {
     props.onBeginEditing && props.onBeginEditing();
   }
 
-  onEndEditing() {
+  onCancel() {
     let props = this.props;
 
     props.onEndEditing && props.onEndEditing();
   }
 
-  onSubmitEditing(value) {
+  onSubmit(value) {
     let onSubmitEditing = this.props.onSubmitEditing;
 
     this.setState({selectedValue: value}, function() {
@@ -56,12 +60,12 @@ class SelectInputIOS extends Component {
 
         <PickerKeyboard
           ref={(c) => { this.pickerKeyboard = c; }}
-          color={props.color}
           options={props.options}
           value={props.value}
-          onEndEditing={this.onEndEditing}
-          onSubmitEditing={this.onSubmitEditing}
+          onCancel={this.onCancel.bind(this)}
+          onSubmit={this.onSubmit.bind(this)}
           buttonsBackgroundColor={props.buttonsBackgroundColor}
+          buttonsTextColor={props.buttonsTextColor}
           keyboardBackgroundColor={props.keyboardBackgroundColor}
           returnKeyText={props.returnKeyText}
           cancelKeyText={props.cancelKeyText}
@@ -86,6 +90,7 @@ class SelectInputIOS extends Component {
 
 SelectInputIOS.propTypes = {
   buttonsBackgroundColor:  PropTypes.string,
+  buttonsTextColor:        PropTypes.string,
   cancelKeyText:           PropTypes.string,
   color:                   PropTypes.string,
   keyboardBackgroundColor: PropTypes.string,
@@ -101,9 +106,10 @@ SelectInputIOS.defaultProps = {
   color:                   'blue',
   keyboardBackgroundColor: '#FF0000',
   buttonsBackgroundColor:  '#00FF00',
+  buttonsTextColor:        '#FFFFFF',
   options:                 [{ value: 0, label: '0' }],
   returnKeyText:           'Done',
-  value:                   0
+  value:                   0,
 };
 
 export default SelectInputIOS;

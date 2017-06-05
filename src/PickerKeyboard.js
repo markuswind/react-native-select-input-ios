@@ -3,23 +3,24 @@
  * https://github.com/markuswind/react-native-select-input
  */
 
+import CustomKeyboard from './CustomKeyboard.js';
 import styles from './stylesheets/pickerKeyboard.css.js';
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 import {
-  Modal,
   Picker,
-  Text,
-  TouchableOpacity,
-  View
 } from 'react-native';
 
 class PickerKeyboard extends Component {
   constructor(props) {
     super(props);
 
+    // refs
+    this.customKeyboard = null;
+
+    // initial state
     this.state = {
       value: props.value,
       visible: false,
@@ -27,32 +28,22 @@ class PickerKeyboard extends Component {
   }
 
   focus() {
-    this.setVisible(true);
+    this.customKeyboard.setVisible(true);
   }
 
-  onCancelPressed() {
+  onCancelPress() {
     let onCancel = this.props.onCancel;
-
-    this.setVisible(false);
     onCancel && onCancel();
   }
 
-  onSubmitPressed() {
+  onSubmitPress() {
     let onSubmit = this.props.onSubmit;
-
-    this.setVisible(false);
     onSubmit && onSubmit(this.state.value);
   }
 
   onValueChange(value) {
     this.setState({
       value: value
-    });
-  }
-
-  setVisible(visible) {
-    this.setState({
-      visible: visible
     });
   }
 
@@ -73,32 +64,43 @@ class PickerKeyboard extends Component {
     let state = this.state;
 
     return (
-      <Modal animationType={'slide'} transparent={true} visible={state.visible}>
-        <View style={styles.container}>
-          <View style={styles.modal}>
-            <View style={[styles.buttonview, { backgroundColor: props.buttonsBackgroundColor }]}>
-              <TouchableOpacity onPress={this.onCancelPressed.bind(this)}>
-                <Text style={{color: props.color}}>
-                  {props.cancelKeyText}
-                </Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity onPress={this.onSubmitPressed.bind(this)}>
-                <Text style={{color: props.color}}>{props.returnKeyText}</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
+      <CustomKeyboard
+        ref={(c) => { this.customKeyboard = c; }}
+        buttonsBackgroundColor={props.buttonsBackgroundColor}
+        buttonsTextColor={props.buttonsTextColor}
+        onCancelPress={this.onCancelPress.bind(this)}
+        onSubmitPress={this.onSubmitPress.bind(this)}
+        >
+        <Picker
+          ref={(c) => { this.picker = c; }}
+          selectedValue={state.value}
+          onValueChange={this.onValueChange.bind(this)}
+          style={[
+            styles.pickerview,
+            { backgroundColor: this.props.keyboardBackgroundColor }
+          ]}
+          >
+            {this.props.options.map((option, index) => {
+              return (
+                <Picker.Item
+                  key={option.value}
+                  value={option.value}
+                  label={option.label}
+                />
+              );
+            })}
+        </Picker>
+      </CustomKeyboard>
     );
   }
 }
 
 PickerKeyboard.propTypes = {
   buttonsBackgroundColor: PropTypes.string,
+  buttonsTextColor:       PropTypes.string,
   cancelKeyText:          PropTypes.string,
-  onEndEditting:          PropTypes.func,
-  onSubmitEditting:       PropTypes.func,
+  onCancel:               PropTypes.func,
+  onSubmit:               PropTypes.func,
   options:                PropTypes.array,
   returnKeyText:          PropTypes.string,
   style:                  PropTypes.object,

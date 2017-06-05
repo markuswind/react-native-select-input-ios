@@ -11,22 +11,7 @@ const styles = StyleSheet.create({
     alignItems:                 'center',
     justifyContent:             'flex-end',
   },
-  modal: {
-    width:                      SCREEN_WIDTH,
-    padding:                    0,
-    alignItems:                 'center',
-    justifyContent:             'center',
-    backgroundColor:            '#F5FCFF',
-  },
-  buttonview:{
-    width:                      SCREEN_WIDTH,
-    padding:                    8,
-    borderTopWidth:             0.5,
-    flexDirection:              'row',
-    justifyContent:             'space-between',
-    borderTopColor:             'lightgrey',
-  },
-  picker_bottom: {
+  pickerview: {
     width:                      SCREEN_WIDTH,
   },
 });
