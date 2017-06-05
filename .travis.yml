@@ -3,11 +3,12 @@ node_js:
   - "5"
 
 install:
-  - cd example
-  - npm install
+  - cd example && npm install
+  - cd ../
 
 script:
-  - npm test
+  - eslint .
+  - cd example && npm test
 
 branches:
   only:
