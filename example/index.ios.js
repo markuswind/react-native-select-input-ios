@@ -26,19 +26,19 @@ export default class example extends Component {
     };
   }
 
-  onSubmitSmall(value) {
+  onSubmitEditingSmall(value) {
     this.setState({
       valueSmall: value
     });
   }
 
-  onSubmitMedium(value) {
+  onSubmitEditingMedium(value) {
     this.setState({
       valueSmall: value
     });
   }
 
-  onSubmitLarge(value) {
+  onSubmitEditingLarge(value) {
     this.setState({
       valueSmall: value
     });
@@ -59,29 +59,26 @@ export default class example extends Component {
     return (
       <View style={styles.container}>
         <SelectInputIOS
-          ref={(c) => { this.selectInput = c; }}
           value={state.valueSmall}
           options={this.getPickerOptions()}
-          onCancel={() => console.log('onCancel')}
-          onSubmit={this.onSubmit}
+          onCancelEditing={() => console.log('onCancel')}
+          onSubmitEditing={this.onSubmitEditingSmall.bind(this)}
           style={styles.selectInputSmall}
         />
 
         <SelectInputIOS
-          ref={(c) => { this.selectInput = c; }}
           value={state.valueMedium}
           options={this.getPickerOptions()}
-          onCancel={() => console.log('onCancel')}
-          onSubmit={this.onSubmit}
+          onCancelEditing={() => console.log('onCancel')}
+          onSubmitEditing={this.onSubmitEditingMedium.bind(this)}
           style={styles.selectInputMedium}
         />
 
         <SelectInputIOS
-          ref={(c) => { this.selectInput = c; }}
           value={state.valueLarge}
           options={this.getPickerOptions()}
-          onCancel={() => console.log('onCancel')}
-          onSubmit={this.onSubmit}
+          onCancelEditing={() => console.log('onCancel')}
+          onSubmitEditing={this.onSubmitEditingLarge.bind(this)}
           style={styles.selectInputLarge}
         />
       </View>
