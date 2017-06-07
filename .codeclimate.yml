@@ -10,6 +10,10 @@ engines:
     config:
       languages:
         - javascript
+ratings:
+  paths:
+  - src/**
+  - example/index.ios.js
 exclude_paths:
 - ".eslintrc"
 - "android/"
