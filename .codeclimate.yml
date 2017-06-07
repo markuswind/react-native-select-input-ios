@@ -1,9 +1,19 @@
-JavaScript: true
-
+engines:
+  rubocop:
+    enabled: false
+  eslint:
+    enabled: true
+  csslint:
+    enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - javascript
 exclude_paths:
 - ".eslintrc"
 - "android/"
 - "ios/"
 - "example/__tests__"
 - "example/android/"
-- "example/ios/" 
+- "example/ios/"
