@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
   defaultlabelstyle: {
     alignSelf:                  'center',
     fontSize:                   13,
-    backgroundColor:            '#FFFF00',
   },
 });
 

@@ -11,31 +11,30 @@ import {
   Dimensions,
   StyleSheet,
   ScrollView,
-  Text
+  Text,
+  View
 } from 'react-native';
-
-const SCREEN_WIDTH = Dimensions.get('window').width;
 
 export default class example extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      valueSmall:  0,
-      valueMedium: 1,
+      valueSmall0: 0,
+      valueSmall1: 1,
       valueLarge:  2,
     };
   }
 
-  onSubmitEditingSmall(value) {
+  onSubmitEditingSmall0(value) {
     this.setState({
-      valueSmall: value
+      valueSmall0: value
     });
   }
 
-  onSubmitEditingMedium(value) {
+  onSubmitEditingSmall1(value) {
     this.setState({
-      valueMedium: value
+      valueSmall1: value
     });
   }
 
@@ -59,29 +58,35 @@ export default class example extends Component {
 
     return (
       <ScrollView contentContainerStyle={styles.scrollViewContentContainer}>
-        <Text style={styles.label}>
-          Small input
-        </Text>
+        <View style={styles.row}>
+          <View style={styles.smallInputWrapper}>
+            <Text style={styles.label}>
+              Small input 0
+            </Text>
 
-        <SelectInputIOS
-          value={state.valueSmall}
-          options={this.getPickerOptions()}
-          onCancelEditing={() => console.log('onCancel')}
-          onSubmitEditing={this.onSubmitEditingSmall.bind(this)}
-          style={[styles.selectInput, styles.selectInputSmall]}
-        />
+            <SelectInputIOS
+              value={state.valueSmall0}
+              options={this.getPickerOptions()}
+              onCancelEditing={() => console.log('onCancel')}
+              onSubmitEditing={this.onSubmitEditingSmall0.bind(this)}
+              style={[styles.selectInput, styles.selectInputSmall]}
+            />
+          </View>
 
-        <Text style={styles.label}>
-          Medium input
-        </Text>
+          <View style={styles.smallInputWrapper}>
+            <Text style={styles.label}>
+              Small input 1
+            </Text>
 
-        <SelectInputIOS
-          value={state.valueMedium}
-          options={this.getPickerOptions()}
-          onCancelEditing={() => console.log('onCancel')}
-          onSubmitEditing={this.onSubmitEditingMedium.bind(this)}
-          style={[styles.selectInput, styles.selectInputMedium]}
-        />
+            <SelectInputIOS
+              value={state.valueSmall1}
+              options={this.getPickerOptions()}
+              onCancelEditing={() => console.log('onCancel')}
+              onSubmitEditing={this.onSubmitEditingSmall1.bind(this)}
+              style={[styles.selectInput, styles.selectInputSmall]}
+            />
+          </View>
+        </View>
 
         <Text style={styles.label}>
           Large input
@@ -99,36 +104,43 @@ export default class example extends Component {
   }
 }
 
+const SCREEN_WIDTH = Dimensions.get('window').width;
+const MARGIN_SMALL = 8;
+const MARGIN_LARGE = 16;
+
 const styles = StyleSheet.create({
   scrollViewContentContainer: {
     flex:                     1,
     width:                    SCREEN_WIDTH,
-    padding:                  16,
+    padding:                  MARGIN_LARGE,
     flexDirection:            'column',
     justifyContent:           'flex-start',
   },
   label: {
     fontSize:                 13,
-    marginTop:                16,
+    marginTop:                MARGIN_LARGE,
+  },
+  row: {
+    flexDirection:            'row',
+    justifyContent:           'space-between',
+  },
+  smallInputWrapper: {
+    flexDirection:            'column'
   },
   selectInput: {
     flexDirection:            'row',
+    height:                   36,
     borderWidth:              1,
-    padding:                  8,
-    marginTop:                16,
+    borderRadius:             4,
+    padding:                  MARGIN_SMALL,
+    marginTop:                MARGIN_LARGE,
+    backgroundColor:          '#FFFFFF',
   },
   selectInputSmall: {
-    flexDirection:            'row',
-    width:                    SCREEN_WIDTH * 0.25,
-    height:                   30,
-  },
-  selectInputMedium: {
-    width:                    SCREEN_WIDTH * 0.5,
-    height:                   36,
+    width:                    SCREEN_WIDTH * 0.5 - (MARGIN_LARGE * 2),
   },
   selectInputLarge: {
-    width:                    SCREEN_WIDTH - 32,
-    height:                   44,
+    width:                    SCREEN_WIDTH - (MARGIN_LARGE * 2),
   }
 });
 
