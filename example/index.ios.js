@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   Dimensions,
+  Image,
   StyleSheet,
   ScrollView,
   Text,
@@ -44,6 +45,18 @@ export default class example extends Component {
     });
   }
 
+  getBananaImage() {
+    let state = this.state;
+    var bananaImage = require('./assets/sad-banana.gif');
+
+    (state.valueSmall0 === 1) &&
+    (state.valueSmall1 === 1) &&
+    (state.valueLarge  === 1) &&
+    (bananaImage = require('./assets/happy-banana.gif'));
+
+    return bananaImage;
+  }
+
   getPickerOptions() {
     return [
       { value: 0, label: 'Apple'      },
@@ -55,6 +68,7 @@ export default class example extends Component {
 
   render() {
     let state = this.state;
+    let bananaImage = this.getBananaImage();
 
     return (
       <ScrollView contentContainerStyle={styles.scrollViewContentContainer}>
@@ -99,6 +113,15 @@ export default class example extends Component {
           onSubmitEditing={this.onSubmitEditingLarge.bind(this)}
           style={[styles.selectInput, styles.selectInputLarge]}
         />
+
+        <View style={styles.bananawrapper}>
+          <Image
+            style={{width: 100, height: 100 }}
+            source={bananaImage}
+          />
+        </View>
+
+        <View style={styles.line}/>
       </ScrollView>
     );
   }
@@ -141,6 +164,19 @@ const styles = StyleSheet.create({
   },
   selectInputLarge: {
     width:                    SCREEN_WIDTH - (MARGIN_LARGE * 2),
+  },
+  bananawrapper: {
+    margin:                   MARGIN_LARGE * 2,
+    marginBottom:             0,
+    flexDirection:            'column',
+    alignItems:               'center',
+    justifyContent:           'center',
+  },
+  line: {
+    width:                    SCREEN_WIDTH * 0.75,
+    height:                   1,
+    marginLeft:               SCREEN_WIDTH * 0.075,
+    backgroundColor:          'black',
   }
 });
 
