@@ -3,6 +3,7 @@
  * https://github.com/markuswind/react-native-select-input
  */
 
+import KeyboardButton from './KeyboardButton.js';
 import styles from './stylesheets/customKeyboard.css.js';
 
 import PropTypes from 'prop-types';
@@ -10,8 +11,6 @@ import React, { Component } from 'react';
 
 import {
   Modal,
-  Text,
-  TouchableOpacity,
   TouchableWithoutFeedback,
   View
 } from 'react-native';
@@ -57,17 +56,17 @@ class CustomKeyboard extends Component {
           <View style={styles.container}>
             <View style={styles.modal}>
               <View style={[styles.buttonview, { backgroundColor: props.buttonsBackgroundColor }]}>
-                <TouchableOpacity onPress={this.onCancelPress.bind(this)}>
-                  <Text style={{ color: props.buttonTextColor }}>
-                    {props.cancelKeyText}
-                  </Text>
-                </TouchableOpacity>
+                <KeyboardButton
+                  color={props.buttonTextColor}
+                  onPress={this.onCancelPress.bind(this)}
+                  text={props.cancelKeyText}
+                />
 
-                <TouchableOpacity onPress={this.onSubmitPress.bind(this)}>
-                  <Text style={{ color: props.buttonTextColor }}>
-                    {props.returnKeyText}
-                  </Text>
-                </TouchableOpacity>
+                <KeyboardButton
+                  color={props.buttonTextColor}
+                  onPress={this.onSubmitPress.bind(this)}
+                  text={props.returnKeyText}
+                />
               </View>
 
               <View>
