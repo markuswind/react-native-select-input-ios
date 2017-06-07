@@ -1,6 +1,5 @@
-config:
-  languages:
-- javascript
+JavaScript: true
+
 exclude_paths:
 - ".eslintrc"
 - "android/"
