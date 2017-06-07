@@ -112,9 +112,9 @@ SelectInputIOS.propTypes = {
 SelectInputIOS.defaultProps = {
   cancelKeyText:           'Cancel',
   color:                   'blue',
-  keyboardBackgroundColor: '#FF0000',
-  buttonsBackgroundColor:  '#00FF00',
-  buttonsTextColor:        '#FFFFFF',
+  keyboardBackgroundColor: '#FFFFFF',
+  buttonsBackgroundColor:  '#CCCFD6',
+  buttonsTextColor:        '#006BFF',
   options:                 [{ value: 0, label: '0' }],
   submitKeyText:           'Done',
   value:                   0,

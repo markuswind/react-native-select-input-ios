@@ -7,9 +7,12 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 import {
+  Dimensions,
   Text,
   TouchableOpacity
 } from 'react-native';
+
+var BUTTON_WIDTH = Dimensions.get('window').width * 0.25;
 
 class KeyboardButton extends Component {
   render() {
@@ -17,7 +20,7 @@ class KeyboardButton extends Component {
 
     return (
       <TouchableOpacity onPress={props.onPress}>
-        <Text style={{ color: props.color}}>
+        <Text style={{ width: BUTTON_WIDTH, color: props.color, textAlign: props.textAlign}}>
           {props.text}
         </Text>
       </TouchableOpacity>
@@ -26,9 +29,10 @@ class KeyboardButton extends Component {
 }
 
 KeyboardButton.propTypes =  {
-  color:   PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
-  text:    PropTypes.string.isRequired,
+  color:     PropTypes.string.isRequired,
+  onPress:   PropTypes.func.isRequired,
+  text:      PropTypes.string.isRequired,
+  textAlign: PropTypes.string.isRequired,
 };
 
 export default KeyboardButton;
