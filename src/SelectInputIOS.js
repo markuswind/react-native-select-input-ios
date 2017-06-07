@@ -74,7 +74,7 @@ class SelectInputIOS extends Component {
             buttonsBackgroundColor={props.buttonsBackgroundColor}
             buttonsTextColor={props.buttonsTextColor}
             keyboardBackgroundColor={props.keyboardBackgroundColor}
-            returnKeyText={props.returnKeyText}
+            submitKeyText={props.submitKeyText}
             cancelKeyText={props.cancelKeyText}
           />
         </View>
@@ -105,7 +105,7 @@ SelectInputIOS.propTypes = {
   onCancel:                PropTypes.func,
   onSubmit:                PropTypes.func,
   options:                 PropTypes.array,
-  returnKeyText:           PropTypes.string,
+  submitKeyText:           PropTypes.string,
   value:                   PropTypes.any,
 };
 
@@ -116,7 +116,7 @@ SelectInputIOS.defaultProps = {
   buttonsBackgroundColor:  '#00FF00',
   buttonsTextColor:        '#FFFFFF',
   options:                 [{ value: 0, label: '0' }],
-  returnKeyText:           'Done',
+  submitKeyText:           'Done',
   value:                   0,
 };
 

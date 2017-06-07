@@ -17,7 +17,7 @@ class KeyboardButton extends Component {
 
     return (
       <TouchableOpacity onPress={props.onPress}>
-        <Text style={{ color: props.text}}>
+        <Text style={{ color: props.color}}>
           {props.text}
         </Text>
       </TouchableOpacity>

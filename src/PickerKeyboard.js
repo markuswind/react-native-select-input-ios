@@ -28,17 +28,19 @@ class PickerKeyboard extends Component {
   }
 
   focus() {
-    this.setState({
-      visible: true
-    });
+    this.setVisible(true);
   }
 
   onCancelPress() {
+    this.setVisible(false);
+
     let onCancel = this.props.onCancel;
     onCancel && onCancel();
   }
 
   onSubmitPress() {
+    this.setVisible(false);
+
     let onSubmit = this.props.onSubmit;
     onSubmit && onSubmit(this.state.value);
   }
@@ -46,6 +48,12 @@ class PickerKeyboard extends Component {
   onValueChange(value) {
     this.setState({
       value: value
+    });
+  }
+
+  setVisible(visible) {
+    this.setState({
+      visible: visible
     });
   }
 
@@ -57,8 +65,10 @@ class PickerKeyboard extends Component {
       <CustomKeyboard
         buttonsBackgroundColor={props.buttonsBackgroundColor}
         buttonsTextColor={props.buttonsTextColor}
+        cancelKeyText={props.cancelKeyText}
         onCancelPress={this.onCancelPress.bind(this)}
         onSubmitPress={this.onSubmitPress.bind(this)}
+        submitKeyText={props.submitKeyText}
         visible={this.state.visible}
         >
         <Picker
@@ -92,8 +102,8 @@ PickerKeyboard.propTypes = {
   onCancel:               PropTypes.func,
   onSubmit:               PropTypes.func,
   options:                PropTypes.array,
-  returnKeyText:          PropTypes.string,
   style:                  PropTypes.object,
+  submitKeyText:          PropTypes.string,
   value:                  PropTypes.any,
 };
 

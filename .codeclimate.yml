@@ -18,6 +18,4 @@ exclude_paths:
 - ".eslintrc"
 - "android/"
 - "ios/"
-- "example/__tests__"
-- "example/android/"
-- "example/ios/"
+- "example/"

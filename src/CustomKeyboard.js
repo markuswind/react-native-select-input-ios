@@ -18,54 +18,35 @@ import {
 class CustomKeyboard extends Component {
   constructor(props) {
      super(props);
-
-    this.state = {
-      visible: props.visible
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    let visible = nextProps.visible;
-
-    (visible !== this.state.visible) &&  this.setVisible(visible);
   }
 
   onCancelPress() {
     this.props.onCancelPress();
-    this.setVisible(false);
   }
 
   onSubmitPress() {
     this.props.onSubmitPress();
-    this.setVisible(false);
-  }
-
-  setVisible(visible) {
-    this.setState({
-      visible: visible
-    });
   }
 
   render() {
     let props = this.props;
-    let state = this.state;
 
     return (
-      <Modal animationType={'slide'} transparent={true} visible={state.visible}>
+      <Modal animationType={'slide'} transparent={true} visible={props.visible}>
         <TouchableWithoutFeedback onPress={this.onCancelPress.bind(this)}>
           <View style={styles.container}>
             <View style={styles.modal}>
               <View style={[styles.buttonview, { backgroundColor: props.buttonsBackgroundColor }]}>
                 <KeyboardButton
-                  color={props.buttonTextColor}
+                  color={props.buttonsTextColor}
                   onPress={this.onCancelPress.bind(this)}
                   text={props.cancelKeyText}
                 />
 
                 <KeyboardButton
-                  color={props.buttonTextColor}
+                  color={props.buttonsTextColor}
                   onPress={this.onSubmitPress.bind(this)}
-                  text={props.returnKeyText}
+                  text={props.submitKeyText}
                 />
               </View>
 
@@ -83,8 +64,10 @@ class CustomKeyboard extends Component {
 CustomKeyboard.propTypes =  {
   buttonsBackgroundColor: PropTypes.string,
   buttonTextColor:        PropTypes.string,
+  cancelKeyText:          PropTypes.string,
   onCancelPress:          PropTypes.func.isRequired,
   onSubmitPress:          PropTypes.func.isRequired,
+  submitKeyText:          PropTypes.string,
   visible:                PropTypes.bool.isRequired,
 };
 
