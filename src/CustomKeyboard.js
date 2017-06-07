@@ -1,5 +1,5 @@
 /**
- * CustomKeybard
+ * CustomKeyboard
  * https://github.com/markuswind/react-native-select-input
  */
 
