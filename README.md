@@ -51,8 +51,8 @@ react-native run-ios
 | `options`                 | `PropTypes.array`  | [{ value: 0: label: '0'}] | picker options                    |
 | `submitKeyText`           | `PropTypes.string` | 'Cancel'    | Changes the text of the submit button           |
 | `value`                   | `PropTypes.any`    | undefined   | initial selected value                          |
-| `style`                   | `PropTypes.object` | undefined   | style object of wrapper view                    |
-| `labelStyle`              | `PropTypes.object` | undefined   | style object of value label                     |
+| `style`                   | `PropTypes.object` | undefined   | [View#style](https://facebook.github.io/react-native/docs/view.html#style "View#style")|
+| `labelStyle`              | `PropTypes.object` | undefined   | [Text#style](https://facebook.github.io/react-native/docs/text.html#style "Text#style") |
 
 ### Methods
 | **Name**  | **Description**             |
