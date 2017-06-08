@@ -12,7 +12,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-var BUTTON_WIDTH = Dimensions.get('window').width * 0.25;
+const BUTTON_WIDTH = Dimensions.get('window').width * 0.25;
 
 class KeyboardButton extends Component {
   render() {
@@ -20,7 +20,12 @@ class KeyboardButton extends Component {
 
     return (
       <TouchableOpacity onPress={props.onPress}>
-        <Text style={{ width: BUTTON_WIDTH, color: props.color, textAlign: props.textAlign}}>
+        <Text style={{
+            width: BUTTON_WIDTH,
+            color: props.color,
+            textAlign: props.textAlign
+          }}
+        >
           {props.text}
         </Text>
       </TouchableOpacity>
