@@ -57,7 +57,7 @@ class SelectInputIOS extends Component {
       <TouchableWithoutFeedback onPress={this.focus.bind(this)}>
         <View style={props.style}>
           <Text
-            style={styles.defaultlabelstyle}
+            style={props.labelStyle || styles.defaultlabelstyle}
             adjustFontSizeToFit={true}
             allowsFontScaling={false}
             numberOfLines={1}
