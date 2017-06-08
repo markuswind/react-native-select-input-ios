@@ -48,9 +48,11 @@ react-native run-ios
 | `onBeginEditing`          | `PropTypes.func`   | undefined   | function that is called when keyboard is opened |
 | `onEndEditing`            | `PropTypes.func`   | undefined   | function that is called when input is canceled  |
 | `onSubmitEditing`         | `PropTypes.func`   | undefined   | function that is called when input is submitted |
-| `cancelKeyText`           | `PropTYpes.string` | 'Cancel'    | Changes the text of the cancel button           |
 | `options`                 | `PropTypes.array`  | [{ value: 0: label: '0'}] | picker options                    |
+| `submitKeyText`           | `PropTypes.string` | 'Cancel'    | Changes the text of the submit button           |
 | `value`                   | `PropTypes.any`    | undefined   | initial selected value                          |
+| `style`                   | `PropTypes.object` | undefined   | style object of wrapper view                    |
+| `labelStyle`              | `PropTypes.object` | undefined   | style object of value label                     |
 
 ### Methods
 | **Name**  | **Description**             |
