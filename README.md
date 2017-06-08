@@ -11,8 +11,8 @@ A React Native SelectInput for iOS which shows the picker as a keyboard.
 ### Installation
 `npm install react-native-select-input-ios --save`
 
-### Screenshot
-<img src="https://raw.github.com/markuswind/react-native-select-input-ios/master/screenshots/screenshot.png" alt="Screenshot" | width=300px/>
+### Preview
+<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.gif?raw=true" width=320px/>
 
 ### Usage
 Import ``react-native-keyboard-select-input-ios`` and wrap your content inside
@@ -27,66 +27,35 @@ or:
 var SelectInputIOS = require('react-native-select-input-ios');
 ```
 
-Example:
-```js
-var options = [
-  { value: 'apple',      label: 'Apple'      },
-  { value: 'banana',     label: 'Banana'     },
-  { value: 'orange',     label: 'Orange'     },
-  { value: 'strawberry', label: 'Strawberry' }
-];
+### Example:
+Check example directory or clone repository and run the example!
 
-getInitialState() {
-    return {
-        value: 'orange'
-    };
-},
-
-onEndEditing() {
-    this.setState({
-        value: this.refs.selectinput.state.selectedValue
-    });
-},
-
-render() {
-  return (
-    <View style={styles.container}>
-      <SelectInputIOS
-        ref={'selectinput'}
-        value={this.state.value}
-        options={options}
-        color={'#FF8000'}
-        returnKeyText={'customReturnKeyText'}
-        cancelKeyText={'customCancelKeyText'}
-        buttonsBackgroundColor={'#F2F2F2'}
-        keyboardBackgroundColor={'#F8F8F8'}
-        onBeginEditing={() => console.log('onBeginEditing')}
-        onEndEditing=this.onEndEditing
-      />
-    </View>
-  );
-}
+```bash
+git clone https://github.com/markuswind/react-native-select-input-ios
+cd example
+npm install
+react-native run-ios
 ```
 
 ### Props
 
 | **Prop**                  | **Type**         | **Default** | **Description**                                                                          |
 |---------------------------|------------------|-------------|------------------------------------------------------------------------------------------|
-| `style`                   | `object`         | object      |  [Text#style](https://facebook.github.io/react-native/docs/text.html#style "Text#style") |
-| `value`                   | `string`         | ''          | Selected value                                                                           |
-| `options`                 | `array`          | []          | options values and labels (see Example)                                                  |
-| `color`                   | `string`         | 'blue'      | Changes the color of the keyboard buttons                                                |
-| `returnKeyText`           | `string`         | 'Done'      | Changes the text of the submit button                                                    |
-| `cancelKeyText`           | `string`         | 'Cancel'    | Changes the text of the cancel button                                                    |
-| `buttonsBackgroundColor`  | `string`         | '#F2F2F2'   | Changes the background color of the keyboard toolbar                                     |
-| `keyboardBackgroundColor` | `string`         | '#F8F8F8'   | Changed the background color of the keyboard pickerview                                  |
-| `onBeginEditing`          | `PropTypes.func` | undefined   | Callback that is called when select input starts                                         |
-| `onEndEditing`            | `PropTypes.func` | undefined   | Callback that is called when select input ends.                                          |
+| `buttonsBackgroundColor`  | `PropTypes.string` | '#CCCFD6'   | background color of buttons bar                 |
+| `buttonsTextColor`        | `PropTypes.string` | '#006BFF'   | text color buttons in buttons bar               |
+| `cancelKeyText`           | `PropTypes.string` | 'Cancel'    | text of cancel button in buttons bar            |
+| `keyboardBackgroundColor` | `PropTypes.string` | '#FFFFFF'   | background color of picker keyboard             |
+| `onBeginEditing`          | `PropTypes.func`   | undefined   | function that is called when keyboard is opened |
+| `onEndEditing`            | `PropTypes.func`   | undefined   | function that is called when input is canceled  |
+| `onSubmitEditing`         | `PropTypes.func`   | undefined   | function that is called when input is submitted |
+| `cancelKeyText`           | `PropTYpes.string` | 'Cancel'    | Changes the text of the cancel button           |
+| `options`                 | `PropTypes.array`  | [{ value: 0: label: '0'}] | picker options                    |
+| `value`                   | `PropTypes.any`    | undefined   | initial selected value                          |
 
 ### Methods
 | **Name**  | **Description**             |
 |-----------|-----------------------------|
-| `focus`   | Toggle the picker keyboard  |
+| `focus`   | toggles the picker keyboard |
 
 ## License
 
