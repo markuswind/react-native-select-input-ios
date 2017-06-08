@@ -17,7 +17,8 @@
     "SelectInput",
     "SelectInputIOS",
     "Picker",
-    "PickerIOS"
+    "PickerIOS",
+    "CustomKeyboard"
   ],
   "author": "Markus Wind",
   "license": "MIT",
