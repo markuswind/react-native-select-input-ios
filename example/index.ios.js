@@ -4,7 +4,8 @@
  * @flow
  */
 
-import SelectInputIOS from 'react-native-select-input-ios';
+import SelectInput from 'react-native-select-input-ios';
+
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -78,7 +79,7 @@ export default class example extends Component {
               Small input 0
             </Text>
 
-            <SelectInputIOS
+            <SelectInput
               value={state.valueSmall0}
               options={this.getPickerOptions()}
               onCancelEditing={() => console.log('onCancel')}
@@ -92,7 +93,7 @@ export default class example extends Component {
               Small input 1
             </Text>
 
-            <SelectInputIOS
+            <SelectInput
               value={state.valueSmall1}
               options={this.getPickerOptions()}
               onCancelEditing={() => console.log('onCancel')}
@@ -106,7 +107,7 @@ export default class example extends Component {
           Large input
         </Text>
 
-        <SelectInputIOS
+        <SelectInput
           value={state.valueLarge}
           options={this.getPickerOptions()}
           onCancelEditing={() => console.log('onCancel')}
