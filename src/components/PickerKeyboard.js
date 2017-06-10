@@ -1,10 +1,10 @@
 /**
- * PickerKeyboard
+ * SelectInput
  * https://github.com/markuswind/react-native-select-input
  */
 
 import CustomKeyboard from './CustomKeyboard.js';
-import styles from './stylesheets/pickerKeyboard.css.js';
+import styles from './../stylesheets/pickerKeyboard.css.js';
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';

@@ -4,7 +4,7 @@
  */
 
 import KeyboardButton from './KeyboardButton.js';
-import styles from './stylesheets/customKeyboard.css.js';
+import styles from './../stylesheets/customKeyboard.css.js';
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';

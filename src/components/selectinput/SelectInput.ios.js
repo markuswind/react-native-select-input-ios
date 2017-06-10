@@ -1,16 +1,18 @@
 /**
- * SelectInputIOS
+ * SelectInput
  * https://github.com/markuswind/react-native-select-input
  */
 
-import PickerKeyboard from './PickerKeyboard.js';
-import styles from './stylesheets/selectInputIOS.css.js';
+import AbstractSelectInput from './AbstractSelectInput.js';
+import PickerKeyboard from './../PickerKeyboard.js';
+
+import styles from './../../stylesheets/selectInputIOS.css.js';
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
 
-class SelectInputIOS extends Component {
+class SelectInput extends AbstractSelectInput {
   constructor(props) {
     super(props);
 
@@ -33,20 +35,6 @@ class SelectInputIOS extends Component {
 
     pickerKeyboard && pickerKeyboard.focus();
     props.onBeginEditing && props.onBeginEditing();
-  }
-
-  onCancel() {
-    let props = this.props;
-
-    props.onEndEditing && props.onEndEditing();
-  }
-
-  onSubmit(value) {
-    let onSubmitEditing = this.props.onSubmitEditing;
-
-    this.setState({selectedValue: value}, function() {
-      onSubmitEditing && onSubmitEditing(value);
-    });
   }
 
   render() {
@@ -81,34 +69,23 @@ class SelectInputIOS extends Component {
       </TouchableWithoutFeedback>
     );
   }
-
-  getValueLabel() {
-    let props = this.props;
-    let options = props.options || [{value: '', label: ''}];
-
-    var label = options.map(function(object) {
-      if (object.value === props.value) {
-        return object.label;
-      }
-    });
-
-    return label || '';
-  }
 }
 
-SelectInputIOS.propTypes = {
+SelectInput.propTypes = {
   buttonsBackgroundColor:  PropTypes.string,
   buttonsTextColor:        PropTypes.string,
   cancelKeyText:           PropTypes.string,
   keyboardBackgroundColor: PropTypes.string,
+  labelStyle:              PropTypes.object,
   onEndEditing:            PropTypes.func,
   onSubmitEditing:         PropTypes.func,
   options:                 PropTypes.array,
   submitKeyText:           PropTypes.string,
+  style:                   PropTypes.object,
   value:                   PropTypes.any,
 };
 
-SelectInputIOS.defaultProps = {
+SelectInput.defaultProps = {
   cancelKeyText:           'Cancel',
   keyboardBackgroundColor: '#FFFFFF',
   buttonsBackgroundColor:  '#CCCFD6',
@@ -118,4 +95,4 @@ SelectInputIOS.defaultProps = {
   value:                   0,
 };
 
-export default SelectInputIOS;
+export default SelectInput;
