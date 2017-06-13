@@ -12,9 +12,7 @@ A React Native SelectInput for iOS which shows the picker as a keyboard.
 `npm install react-native-select-input-ios --save`
 
 ### Preview
-<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.ios.gif?raw=true" width=320px/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.android.gif?raw=true" width=320px/>
+<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.ios.gif?raw=true" width=300px/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.android.gif?raw=true" width=300px/>
 
 ### Usage
 Import ``react-native-keyboard-select-input-ios`` and wrap your content inside
@@ -47,6 +45,7 @@ react-native run-ios
 | `buttonsTextColor`        | `PropTypes.string` | '#006BFF'   | text color buttons in buttons bar               |
 | `cancelKeyText`           | `PropTypes.string` | 'Cancel'    | text of cancel button in buttons bar            |
 | `keyboardBackgroundColor` | `PropTypes.string` | '#FFFFFF'   | background color of picker keyboard             |
+| `mode`                    | `PropTypes.string` | 'dialog'    | Picker mode on Android, 'dialog' or 'dropdown'  |
 | `onBeginEditing`          | `PropTypes.func`   | undefined   | function that is called when keyboard is opened |
 | `onEndEditing`            | `PropTypes.func`   | undefined   | function that is called when input is canceled  |
 | `onSubmitEditing`         | `PropTypes.func`   | undefined   | function that is called when input is submitted |
