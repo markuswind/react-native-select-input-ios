@@ -4,50 +4,189 @@
  * @flow
  */
 
+import SelectInput from 'react-native-select-input-ios';
+
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  Dimensions,
+  Image,
   StyleSheet,
+  ScrollView,
   Text,
   View
 } from 'react-native';
 
 export default class example extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      valueSmall0: 0,
+      valueSmall1: 1,
+      valueLarge:  2,
+    };
+  }
+
+  onSubmitEditingSmall0(value) {
+    this.setState({
+      valueSmall0: value
+    });
+  }
+
+  onSubmitEditingSmall1(value) {
+    this.setState({
+      valueSmall1: value
+    });
+  }
+
+  onSubmitEditingLarge(value) {
+    this.setState({
+      valueLarge: value
+    });
+  }
+
+  getBananaImage() {
+    let state = this.state;
+    var bananaImage = require('./assets/sad-banana.gif');
+
+    (state.valueSmall0 === 1) &&
+    (state.valueSmall1 === 1) &&
+    (state.valueLarge  === 1) &&
+    (bananaImage = require('./assets/happy-banana.gif'));
+
+    return bananaImage;
+  }
+
+  getPickerOptions() {
+    return [
+      { value: 0, label: 'Apple'      },
+      { value: 1, label: 'Banana'     },
+      { value: 2, label: 'Orange'     },
+      { value: 3, label: 'Strawberry' }
+    ];
+  }
+
   render() {
+    let state = this.state;
+    let bananaImage = this.getBananaImage();
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+      <ScrollView contentContainerStyle={styles.scrollViewContentContainer}>
+        <View style={styles.row}>
+          <View style={styles.smallInputWrapper}>
+            <Text style={styles.label}>
+              Small input 0
+            </Text>
+
+            <SelectInput
+              value={state.valueSmall0}
+              options={this.getPickerOptions()}
+              onCancelEditing={() => console.log('onCancel')}
+              onSubmitEditing={this.onSubmitEditingSmall0.bind(this)}
+              style={[styles.selectInput, styles.selectInputSmall]}
+              labelStyle={styles.selectInputInner}
+            />
+          </View>
+
+          <View style={styles.smallInputWrapper}>
+            <Text style={styles.label}>
+              Small input 1
+            </Text>
+
+            <SelectInput
+              value={state.valueSmall1}
+              options={this.getPickerOptions()}
+              onCancelEditing={() => console.log('onCancel')}
+              onSubmitEditing={this.onSubmitEditingSmall1.bind(this)}
+              style={[styles.selectInput, styles.selectInputSmall]}
+              labelStyle={styles.selectInputInner}
+            />
+          </View>
+        </View>
+
+        <Text style={styles.label}>
+          Large input
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+
+        <SelectInput
+          value={state.valueLarge}
+          options={this.getPickerOptions()}
+          onCancelEditing={() => console.log('onCancel')}
+          onSubmitEditing={this.onSubmitEditingLarge.bind(this)}
+          style={[styles.selectInput, styles.selectInputLarge]}
+          labelStyle={styles.selectInputInner}
+        />
+
+        <View style={styles.bananawrapper}>
+          <Image
+            style={{width: 100, height: 100 }}
+            source={bananaImage}
+          />
+        </View>
+
+        <View style={styles.line}/>
+      </ScrollView>
     );
   }
 }
 
+const SCREEN_WIDTH = Dimensions.get('window').width;
+const MARGIN_SMALL = 8;
+const MARGIN_LARGE = 16;
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  scrollViewContentContainer: {
+    flex:                     1,
+    width:                    SCREEN_WIDTH,
+    padding:                  MARGIN_LARGE,
+    flexDirection:            'column',
+    justifyContent:           'flex-start',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  label: {
+    fontSize:                 13,
+    marginTop:                MARGIN_LARGE,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  row: {
+    flexDirection:            'row',
+    justifyContent:           'space-between',
   },
+  smallInputWrapper: {
+    flexDirection:            'column'
+  },
+  selectInput: {
+    backgroundColor:          '#FFFFFF',
+    borderWidth:              1,
+    borderColor:              'black',
+    borderRadius:             4,
+    marginTop:                MARGIN_LARGE,
+    overflow:                 'hidden'
+  },
+  selectInputInner: {
+//     flexDirection:            'row',
+    height:                   36,
+    borderRadius:             4,
+//     padding:                  MARGIN_SMALL
+  },
+  selectInputSmall: {
+    width:                    SCREEN_WIDTH * 0.5 - (MARGIN_LARGE * 2),
+  },
+  selectInputLarge: {
+    width:                    SCREEN_WIDTH - (MARGIN_LARGE * 2),
+  },
+  bananawrapper: {
+    margin:                   MARGIN_LARGE * 2,
+    marginBottom:             0,
+    flexDirection:            'column',
+    alignItems:               'center',
+    justifyContent:           'center',
+  },
+  line: {
+    width:                    SCREEN_WIDTH * 0.75,
+    height:                   1,
+    marginLeft:               SCREEN_WIDTH * 0.075,
+    backgroundColor:          'black',
+  }
 });
 
 AppRegistry.registerComponent('example', () => example);

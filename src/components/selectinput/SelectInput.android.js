@@ -3,13 +3,14 @@
  * https://github.com/markuswind/react-native-select-input
  */
 
-import styles from './../../stylesheets/selectInput.css.js';
+import AbstractSelectInput from './AbstractSelectInput.js';
+import styles from './../../stylesheets/selectInputAndroid.css.js';
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Picker, View } from 'react-native';
 
-class SelectInput extends Component {
+class SelectInput extends AbstractSelectInput {
   constructor(props) {
     super(props);
 
@@ -30,8 +31,8 @@ class SelectInput extends Component {
       <View style={props.style}>
         <Picker
           ref={(c) => {this.picker = c; }}
-          selectedValue={state.value}
-          onValueChange={this.onValueChange.bind(this)}
+          selectedValue={state.selectedValue}
+          onValueChange={this.onSubmit.bind(this)}
           style={props.labelStyle || styles.defaultLabelStyle}
           >
             {props.options.map((option, index) => {
@@ -50,9 +51,9 @@ class SelectInput extends Component {
 }
 
 SelectInput.propTypes = {
-  labelStyle: PropTypes.object,
+  labelStyle: PropTypes.oneOfType([Picker.propTypes.style, PropTypes.arrayOf(Picker.propTypes.style)]),
   options:    PropTypes.array,
-  style:      PropTypes.object,
+  style:      PropTypes.oneOfType([View.propTypes.style, PropTypes.arrayOf(View.propTypes.style)]),
   value:      PropTypes.any,
 };
 
