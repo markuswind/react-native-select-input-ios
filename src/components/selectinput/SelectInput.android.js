@@ -7,7 +7,8 @@ import AbstractSelectInput from './AbstractSelectInput.js';
 import styles from './../../stylesheets/selectInputAndroid.css.js';
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
+
 import { Picker, View } from 'react-native';
 
 class SelectInput extends AbstractSelectInput {
@@ -31,6 +32,7 @@ class SelectInput extends AbstractSelectInput {
       <View style={props.style}>
         <Picker
           ref={(c) => {this.picker = c; }}
+          mode={props.mode}
           selectedValue={state.selectedValue}
           onValueChange={this.onSubmit.bind(this)}
           style={props.labelStyle || styles.defaultLabelStyle}
@@ -52,13 +54,16 @@ class SelectInput extends AbstractSelectInput {
 
 SelectInput.propTypes = {
   labelStyle: PropTypes.oneOfType([Picker.propTypes.style, PropTypes.arrayOf(Picker.propTypes.style)]),
+  mode:       PropTypes.oneOf(['dialog', 'dropdown']),
   options:    PropTypes.array,
   style:      PropTypes.oneOfType([View.propTypes.style, PropTypes.arrayOf(View.propTypes.style)]),
   value:      PropTypes.any,
 };
 
 SelectInput.defaultProps = {
-
+  mode:    'dialog',
+  options: [{ value: 0, label: '0' }],
+  value:   0
 };
 
 export default SelectInput;

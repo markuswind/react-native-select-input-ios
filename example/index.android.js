@@ -76,7 +76,7 @@ export default class example extends Component {
         <View style={styles.row}>
           <View style={styles.smallInputWrapper}>
             <Text style={styles.label}>
-              Small input 0
+              Small dialog input
             </Text>
 
             <SelectInput
@@ -91,11 +91,12 @@ export default class example extends Component {
 
           <View style={styles.smallInputWrapper}>
             <Text style={styles.label}>
-              Small input 1
+              Small dropdown input
             </Text>
 
             <SelectInput
               value={state.valueSmall1}
+              mode={'dropdown'}
               options={this.getPickerOptions()}
               onCancelEditing={() => console.log('onCancel')}
               onSubmitEditing={this.onSubmitEditingSmall1.bind(this)}
@@ -106,7 +107,7 @@ export default class example extends Component {
         </View>
 
         <Text style={styles.label}>
-          Large input
+          Large dialog input
         </Text>
 
         <SelectInput
@@ -132,7 +133,6 @@ export default class example extends Component {
 }
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const MARGIN_SMALL = 8;
 const MARGIN_LARGE = 16;
 
 const styles = StyleSheet.create({
@@ -163,10 +163,8 @@ const styles = StyleSheet.create({
     overflow:                 'hidden'
   },
   selectInputInner: {
-//     flexDirection:            'row',
     height:                   36,
     borderRadius:             4,
-//     padding:                  MARGIN_SMALL
   },
   selectInputSmall: {
     width:                    SCREEN_WIDTH * 0.5 - (MARGIN_LARGE * 2),
