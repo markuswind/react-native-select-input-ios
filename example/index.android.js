@@ -85,6 +85,7 @@ export default class example extends Component {
               onCancelEditing={() => console.log('onCancel')}
               onSubmitEditing={this.onSubmitEditingSmall0.bind(this)}
               style={[styles.selectInput, styles.selectInputSmall]}
+              labelStyle={styles.selectInputInner}
             />
           </View>
 
@@ -99,6 +100,7 @@ export default class example extends Component {
               onCancelEditing={() => console.log('onCancel')}
               onSubmitEditing={this.onSubmitEditingSmall1.bind(this)}
               style={[styles.selectInput, styles.selectInputSmall]}
+              labelStyle={styles.selectInputInner}
             />
           </View>
         </View>
@@ -113,6 +115,7 @@ export default class example extends Component {
           onCancelEditing={() => console.log('onCancel')}
           onSubmitEditing={this.onSubmitEditingLarge.bind(this)}
           style={[styles.selectInput, styles.selectInputLarge]}
+          labelStyle={styles.selectInputInner}
         />
 
         <View style={styles.bananawrapper}>
@@ -152,13 +155,18 @@ const styles = StyleSheet.create({
     flexDirection:            'column'
   },
   selectInput: {
-//     flexDirection:            'row',
-//     height:                   36,
-    borderWidth:              1,
-    borderRadius:             4,
-//     padding:                  MARGIN_SMALL,
-//     marginTop:                MARGIN_LARGE,
     backgroundColor:          '#FFFFFF',
+    borderWidth:              1,
+    borderColor:              'black',
+    borderRadius:             4,
+    marginTop:                MARGIN_LARGE,
+    overflow:                 'hidden'
+  },
+  selectInputInner: {
+//     flexDirection:            'row',
+    height:                   36,
+    borderRadius:             4,
+//     padding:                  MARGIN_SMALL
   },
   selectInputSmall: {
     width:                    SCREEN_WIDTH * 0.5 - (MARGIN_LARGE * 2),

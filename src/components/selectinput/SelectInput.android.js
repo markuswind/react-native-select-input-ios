@@ -51,9 +51,9 @@ class SelectInput extends AbstractSelectInput {
 }
 
 SelectInput.propTypes = {
-  labelStyle: PropTypes.object,
+  labelStyle: PropTypes.oneOfType([Picker.propTypes.style, PropTypes.arrayOf(Picker.propTypes.style)]),
   options:    PropTypes.array,
-  style:      PropTypes.object,
+  style:      PropTypes.oneOfType([View.propTypes.style, PropTypes.arrayOf(View.propTypes.style)]),
   value:      PropTypes.any,
 };
 
