@@ -158,7 +158,6 @@ const styles = StyleSheet.create({
     backgroundColor:          '#FFFFFF',
     borderWidth:              1,
     borderColor:              'black',
-    borderRadius:             4,
     marginTop:                MARGIN_LARGE,
     overflow:                 'hidden'
   },
