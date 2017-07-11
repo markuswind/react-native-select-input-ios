@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   buttonview:{
     width:                      SCREEN_WIDTH,
     padding:                    8,
-    borderTopWidth:             0.5,
+    borderTopWidth:             StyleSheet.hairlineWidth,
     flexDirection:              'row',
     justifyContent:             'space-between',
     borderTopColor:             'lightgrey',
