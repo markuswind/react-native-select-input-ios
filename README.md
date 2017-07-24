@@ -50,7 +50,7 @@ react-native run-ios
 | `onEndEditing`            | `PropTypes.func`   | undefined   | function that is called when input is canceled  |
 | `onSubmitEditing`         | `PropTypes.func`   | undefined   | function that is called when input is submitted |
 | `options`                 | `PropTypes.array`  | [{ value: 0: label: '0'}] | picker options                    |
-| `submitKeyText`           | `PropTypes.string` | 'Cancel'    | Changes the text of the submit button           |
+| `submitKeyText`           | `PropTypes.string` | 'Done'      | Changes the text of the submit button           |
 | `value`                   | `PropTypes.any`    | undefined   | initial selected value                          |
 | `style`                   | `PropTypes.object` | undefined   | [View#style](https://facebook.github.io/react-native/docs/view.html#style "View#style")|
 | `labelStyle`              | `PropTypes.object` | undefined   | [Text#style](https://facebook.github.io/react-native/docs/text.html#style "Text#style") |
