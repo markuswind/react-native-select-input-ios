@@ -6,6 +6,17 @@
 import { Component } from 'react';
 
 class AbstractSelectInput extends Component {
+
+  componentWillReceiveProps(nextProps) {
+    let currentValue = this.props.value;
+
+    if (nextProps.value !== currentValue) {
+      this.setState({
+        selectedValue: nextProps.value
+      });
+    }
+  }
+
   focus() {
     // NOTE: - implemented on iOS only..
   }

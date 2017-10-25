@@ -27,6 +27,16 @@ class PickerKeyboard extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    let currentValue = this.state.value;
+
+    if (nextProps.value !== currentValue) {
+      this.setState({
+        value: nextProps.value
+      });
+    }
+  }
+
   focus() {
     this.setVisible(true);
   }
