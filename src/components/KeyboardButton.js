@@ -23,7 +23,8 @@ class KeyboardButton extends Component {
         <Text style={{
             width: BUTTON_WIDTH,
             color: props.color,
-            textAlign: props.textAlign
+            textAlign: props.textAlign,
+            fontSize: props.textSize || null
           }}
         >
           {props.text}
@@ -38,6 +39,7 @@ KeyboardButton.propTypes =  {
   onPress:   PropTypes.func.isRequired,
   text:      PropTypes.string.isRequired,
   textAlign: PropTypes.string.isRequired,
+  textSize:  PropTypes.number,
 };
 
 export default KeyboardButton;

@@ -42,6 +42,7 @@ class CustomKeyboard extends Component {
                   onPress={this.onCancelPress.bind(this)}
                   text={props.cancelKeyText}
                   textAlign={'left'}
+                  textSize={props.buttonsTextSize}
                 />
 
                 <KeyboardButton
@@ -49,6 +50,7 @@ class CustomKeyboard extends Component {
                   onPress={this.onSubmitPress.bind(this)}
                   text={props.submitKeyText}
                   textAlign={'right'}
+                  textSize={props.buttonsTextSize}
                 />
               </View>
 
@@ -66,6 +68,7 @@ class CustomKeyboard extends Component {
 CustomKeyboard.propTypes =  {
   buttonsBackgroundColor: PropTypes.string,
   buttonTextColor:        PropTypes.string,
+  buttonTextSize:         PropTypes.number,
   cancelKeyText:          PropTypes.string,
   onCancelPress:          PropTypes.func.isRequired,
   onSubmitPress:          PropTypes.func.isRequired,

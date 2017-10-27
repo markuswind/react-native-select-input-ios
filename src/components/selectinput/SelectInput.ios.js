@@ -61,6 +61,7 @@ class SelectInput extends AbstractSelectInput {
             onSubmit={this.onSubmit.bind(this)}
             buttonsBackgroundColor={props.buttonsBackgroundColor}
             buttonsTextColor={props.buttonsTextColor}
+            buttonsTextSize={props.buttonsTextSize}
             keyboardBackgroundColor={props.keyboardBackgroundColor}
             submitKeyText={props.submitKeyText}
             cancelKeyText={props.cancelKeyText}
@@ -74,6 +75,7 @@ class SelectInput extends AbstractSelectInput {
 SelectInput.propTypes = {
   buttonsBackgroundColor:  PropTypes.string,
   buttonsTextColor:        PropTypes.string,
+  buttonsTextSize:         PropTypes.number,
   cancelKeyText:           PropTypes.string,
   keyboardBackgroundColor: PropTypes.string,
   labelStyle:              PropTypes.object,

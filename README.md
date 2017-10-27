@@ -34,26 +34,27 @@ Check example directory or clone repository and run the example!
 git clone https://github.com/markuswind/react-native-select-input-ios
 cd example
 npm install
-react-native run-ios
+react-native run-ios or react-native run-android
 ```
 
 ### Props
 
-| **Prop**                  | **Type**         | **Default** | **Description**                                                                          |
-|---------------------------|------------------|-------------|------------------------------------------------------------------------------------------|
-| `buttonsBackgroundColor`  | `PropTypes.string` | '#CCCFD6'   | background color of buttons bar                 |
-| `buttonsTextColor`        | `PropTypes.string` | '#006BFF'   | text color buttons in buttons bar               |
-| `cancelKeyText`           | `PropTypes.string` | 'Cancel'    | text of cancel button in buttons bar            |
-| `keyboardBackgroundColor` | `PropTypes.string` | '#FFFFFF'   | background color of picker keyboard             |
-| `mode`                    | `PropTypes.string` | 'dialog'    | Picker mode on Android, 'dialog' or 'dropdown'  |
-| `onBeginEditing`          | `PropTypes.func`   | undefined   | function that is called when keyboard is opened |
-| `onEndEditing`            | `PropTypes.func`   | undefined   | function that is called when input is canceled  |
-| `onSubmitEditing`         | `PropTypes.func`   | undefined   | function that is called when input is submitted |
-| `options`                 | `PropTypes.array`  | [{ value: 0: label: '0'}] | picker options                    |
-| `submitKeyText`           | `PropTypes.string` | 'Cancel'    | Changes the text of the submit button           |
-| `value`                   | `PropTypes.any`    | undefined   | initial selected value                          |
-| `style`                   | `PropTypes.object` | undefined   | [View#style](https://facebook.github.io/react-native/docs/view.html#style "View#style")|
-| `labelStyle`              | `PropTypes.object` | undefined   | [Text#style](https://facebook.github.io/react-native/docs/text.html#style "Text#style") |
+| **Prop**                  | **Type**           | **Default**               | **Description**                                 |
+|---------------------------|--------------------|---------------------------|-------------------------------------------------|
+| `buttonsBackgroundColor`  | `PropTypes.string` | '#CCCFD6'                 | background color of buttons bar                 |
+| `buttonsTextColor`        | `PropTypes.string` | '#006BFF'                 | text color of buttons in buttons bar            |
+| `buttonsTextSize`         | `PropTypes.number` | undefined                 | text size of buttons in buttons bar             |
+| `cancelKeyText`           | `PropTypes.string` | 'Cancel'                  | text of cancel button in buttons bar            |
+| `keyboardBackgroundColor` | `PropTypes.string` | '#FFFFFF'                 | background color of picker keyboard             |
+| `mode`                    | `PropTypes.string` | 'dialog'                  | Picker mode on Android, 'dialog' or 'dropdown'  |
+| `onBeginEditing`          | `PropTypes.func`   | undefined                 | function that is called when keyboard is opened |
+| `onEndEditing`            | `PropTypes.func`   | undefined                 | function that is called when input is canceled  |
+| `onSubmitEditing`         | `PropTypes.func`   | undefined                 | function that is called when input is submitted |
+| `options`                 | `PropTypes.array`  | [{ value: 0: label: '0'}] | picker options                                  |
+| `submitKeyText`           | `PropTypes.string` | 'Done'                    | Changes the text of the submit button           |
+| `value`                   | `PropTypes.any`    | undefined                 | initial selected value                          |
+| `style`                   | `PropTypes.object` | undefined                 | [View#style](https://facebook.github.io/react-native/docs/view.html#style "View#style") |
+| `labelStyle`              | `PropTypes.object` | undefined                 | [Text#style](https://facebook.github.io/react-native/docs/text.html#style "Text#style") |
 
 ### Methods
 | **Name**  | **Description**             |
