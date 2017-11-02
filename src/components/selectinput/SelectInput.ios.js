@@ -10,7 +10,7 @@ import styles from './../../stylesheets/selectInputIOS.css.js';
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Text, TouchableWithoutFeedback, View, ViewPropTypes } from 'react-native';
 
 class SelectInput extends AbstractSelectInput {
   constructor(props) {
@@ -83,7 +83,7 @@ SelectInput.propTypes = {
   onSubmitEditing:         PropTypes.func,
   options:                 PropTypes.array,
   submitKeyText:           PropTypes.string,
-  style:                   PropTypes.oneOfType([View.propTypes.style, PropTypes.arrayOf(View.propTypes.style)]),
+  style:                   PropTypes.oneOfType([ViewPropTypes.style, PropTypes.arrayOf(ViewPropTypes.style)]),
   value:                   PropTypes.any,
 };
 
