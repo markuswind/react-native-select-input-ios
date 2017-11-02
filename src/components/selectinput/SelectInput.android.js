@@ -9,7 +9,7 @@ import styles from './../../stylesheets/selectInputAndroid.css.js';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Picker, View } from 'react-native';
+import { Picker, View, ViewPropTypes } from 'react-native';
 
 class SelectInput extends AbstractSelectInput {
   constructor(props) {
@@ -56,7 +56,7 @@ SelectInput.propTypes = {
   labelStyle: PropTypes.oneOfType([Picker.propTypes.style, PropTypes.arrayOf(Picker.propTypes.style)]),
   mode:       PropTypes.oneOf(['dialog', 'dropdown']),
   options:    PropTypes.array,
-  style:      PropTypes.oneOfType([View.propTypes.style, PropTypes.arrayOf(View.propTypes.style)]),
+  style:      PropTypes.oneOfType([ViewPropTypes.style, PropTypes.arrayOf(ViewPropTypes.style)]),
   value:      PropTypes.any,
 };
 
