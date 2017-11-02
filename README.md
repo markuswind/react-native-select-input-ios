@@ -8,8 +8,22 @@
 
 A React Native SelectInput for iOS which shows the picker as a keyboard.
 
+
+### Supported versions
+- `v1.1.3` requires `RN>=0.49`
+- Use `v1.1.2` for older RN versions.
+
 ### Installation
-`npm install react-native-select-input-ios --save`
+
+Installation can be done through ``npm`` or `yarn`:
+
+```shell
+npm i react-native-select-input-ios --save
+```
+
+```shell
+yarn add react-native-select-input-ios
+```
 
 ### Preview
 <img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.ios.gif?raw=true" width=300px/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.android.gif?raw=true" width=300px/>
