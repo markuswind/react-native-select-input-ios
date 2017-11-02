@@ -6,7 +6,7 @@
 
 # React Native SelectInputIOS
 
-A React Native SelectInput for iOS which shows the picker as a keyboard.
+A React Native SelectInput for iOS (+Android) which shows the picker as a keyboard.
 
 
 ### Supported versions
@@ -33,12 +33,12 @@ Import ``react-native-keyboard-select-input-ios`` and wrap your content inside
 it:
 
 ```js
-import SelectInputIOS from 'react-native-select-input-ios';
+import SelectInput from 'react-native-select-input-ios';
 ```
 
 or:
 ```js
-var SelectInputIOS = require('react-native-select-input-ios');
+var SelectInput = require('react-native-select-input-ios');
 ```
 
 ### Example:
