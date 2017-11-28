@@ -20,7 +20,9 @@ class KeyboardButton extends Component {
 
     return (
       <TouchableOpacity onPress={props.onPress}>
-        <Text style={{
+        <Text 
+          allowFontScaling={false}
+          style={{
             width: BUTTON_WIDTH,
             color: props.color,
             textAlign: props.textAlign,
