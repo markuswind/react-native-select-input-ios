@@ -47,7 +47,7 @@ class SelectInput extends AbstractSelectInput {
           <Text
             style={props.labelStyle || styles.defaultlabelstyle}
             adjustFontSizeToFit={true}
-            allowsFontScaling={false}
+            allowFontScaling={false}
             numberOfLines={1}
             >
             {this.getValueLabel()}
