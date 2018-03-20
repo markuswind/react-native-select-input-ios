@@ -26,7 +26,8 @@ class KeyboardButton extends Component {
             width: BUTTON_WIDTH,
             color: props.color,
             textAlign: props.textAlign,
-            fontSize: props.textSize || null
+            fontSize: props.textSize || null,
+            padding: 8
           }}
         >
           {props.text}
