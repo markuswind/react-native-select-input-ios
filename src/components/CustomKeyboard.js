@@ -36,7 +36,7 @@ class CustomKeyboard extends Component {
         <TouchableWithoutFeedback onPress={this.onCancelPress.bind(this)}>
           <View style={styles.container}>
             <View style={styles.modal}>
-              <View style={[styles.buttonview, { backgroundColor: props.buttonsBackgroundColor, borderColor: props.buttonsBorderColor }]}>
+              <View style={[styles.buttonview, { backgroundColor: props.buttonsBackgroundColor, borderColor: props.buttonsBorderColor, borderBottomWidth: props.buttonsBorderWidth }]}>
                 <KeyboardButton
                   color={props.buttonsTextColor}
                   onPress={this.onCancelPress.bind(this)}
@@ -68,6 +68,7 @@ class CustomKeyboard extends Component {
 CustomKeyboard.propTypes =  {
   buttonsBackgroundColor: PropTypes.string,
   buttonsBorderColor:     PropTypes.string,
+  buttonsBorderWidth:     PropTypes.string,
   buttonTextColor:        PropTypes.string,
   buttonTextSize:         PropTypes.number,
   cancelKeyText:          PropTypes.string,
