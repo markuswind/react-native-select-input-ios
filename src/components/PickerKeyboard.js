@@ -76,8 +76,8 @@ class PickerKeyboard extends Component {
         buttonsBackgroundColor={props.buttonsBackgroundColor}
         buttonsTextColor={props.buttonsTextColor}
         buttonsTextSize={props.buttonsTextSize}
-        buttonsBorderColor:{props.buttonsBorderColor}
-        buttonsBorderWidth:{props.buttonsBorderWidth}
+        buttonsBorderColor={props.buttonsBorderColor}
+        buttonsBorderWidth={props.buttonsBorderWidth}
         cancelKeyText={props.cancelKeyText}
         onCancelPress={this.onCancelPress.bind(this)}
         onSubmitPress={this.onSubmitPress.bind(this)}
