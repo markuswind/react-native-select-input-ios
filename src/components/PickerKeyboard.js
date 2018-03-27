@@ -76,6 +76,8 @@ class PickerKeyboard extends Component {
         buttonsBackgroundColor={props.buttonsBackgroundColor}
         buttonsTextColor={props.buttonsTextColor}
         buttonsTextSize={props.buttonsTextSize}
+        buttonsBorderColor: props.buttonsBorderColor, 
+        buttonsBorderWidth: props.buttonsBorderWidth,
         cancelKeyText={props.cancelKeyText}
         onCancelPress={this.onCancelPress.bind(this)}
         onSubmitPress={this.onSubmitPress.bind(this)}
@@ -108,6 +110,8 @@ class PickerKeyboard extends Component {
 
 PickerKeyboard.propTypes = {
   buttonsBackgroundColor: PropTypes.string,
+  buttonsBorderColor:     PropTypes.string,
+  buttonsBorderWidth:      PropTypes.string,
   buttonsTextColor:       PropTypes.string,
   buttonsTextSize:        PropTypes.number,
   cancelKeyText:          PropTypes.string,
