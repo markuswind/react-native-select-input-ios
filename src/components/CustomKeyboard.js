@@ -68,7 +68,7 @@ class CustomKeyboard extends Component {
 CustomKeyboard.propTypes =  {
   buttonsBackgroundColor: PropTypes.string,
   buttonsBorderColor:     PropTypes.string,
-  buttonsBorderWidth:     PropTypes.string,
+  buttonsBorderWidth:     PropTypes.number,
   buttonTextColor:        PropTypes.string,
   buttonTextSize:         PropTypes.number,
   cancelKeyText:          PropTypes.string,
