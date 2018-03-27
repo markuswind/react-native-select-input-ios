@@ -20,7 +20,10 @@ const styles = StyleSheet.create({
   },
   buttonview:{
     width:                      SCREEN_WIDTH,
-    padding:                    0,
+    paddingLeft:                    0,
+    paddingRight:                   0,
+    paddingTop:                     5,
+    paddingBottom:                  5,
     borderTopWidth:             StyleSheet.hairlineWidth,
     flexDirection:              'row',
     justifyContent:             'space-between',
