@@ -111,7 +111,7 @@ class PickerKeyboard extends Component {
 PickerKeyboard.propTypes = {
   buttonsBackgroundColor: PropTypes.string,
   buttonsBorderColor:     PropTypes.string,
-  buttonsBorderWidth:      PropTypes.string,
+  buttonsBorderWidth:      PropTypes.number,
   buttonsTextColor:       PropTypes.string,
   buttonsTextSize:        PropTypes.number,
   cancelKeyText:          PropTypes.string,
