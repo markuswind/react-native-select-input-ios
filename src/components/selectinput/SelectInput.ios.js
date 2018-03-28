@@ -60,6 +60,8 @@ class SelectInput extends AbstractSelectInput {
             onCancel={this.onCancel.bind(this)}
             onSubmit={this.onSubmit.bind(this)}
             buttonsBackgroundColor={props.buttonsBackgroundColor}
+            buttonsBorderColor={props.buttonsBorderColor}
+            buttonsBorderWidth={props.buttonsBorderWidth}
             buttonsTextColor={props.buttonsTextColor}
             buttonsTextSize={props.buttonsTextSize}
             keyboardBackgroundColor={props.keyboardBackgroundColor}
@@ -74,11 +76,13 @@ class SelectInput extends AbstractSelectInput {
 
 SelectInput.propTypes = {
   buttonsBackgroundColor:  PropTypes.string,
+  buttonsBorderColor:      PropTypes.string,
+  buttonsBorderWidth:      PropTypes.number,
   buttonsTextColor:        PropTypes.string,
   buttonsTextSize:         PropTypes.number,
   cancelKeyText:           PropTypes.string,
   keyboardBackgroundColor: PropTypes.string,
-  labelStyle:              PropTypes.oneOfType([ViewPropTypes.style, PropTypes.arrayOf(ViewPropTypes.style)]),
+  labelStyle:              PropTypes.object,
   onEndEditing:            PropTypes.func,
   onSubmitEditing:         PropTypes.func,
   options:                 PropTypes.array,
@@ -92,6 +96,8 @@ SelectInput.defaultProps = {
   keyboardBackgroundColor: '#FFFFFF',
   buttonsBackgroundColor:  '#CCCFD6',
   buttonsTextColor:        '#006BFF',
+  buttonsBorderColor:      '#CCCFD6',
+  buttonsBorderWidth:      0,
   options:                 [{ value: 0, label: '0' }],
   submitKeyText:           'Done',
   value:                   0,
