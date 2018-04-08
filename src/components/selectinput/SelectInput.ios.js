@@ -78,7 +78,7 @@ SelectInput.propTypes = {
   buttonsTextSize:         PropTypes.number,
   cancelKeyText:           PropTypes.string,
   keyboardBackgroundColor: PropTypes.string,
-  labelStyle:              PropTypes.oneOfType([ViewPropTypes.style, PropTypes.arrayOf(ViewPropTypes.style)]),
+  labelStyle:              PropTypes.oneOfType([Text.style, PropTypes.arrayOf(Text.style)]),
   onEndEditing:            PropTypes.func,
   onSubmitEditing:         PropTypes.func,
   options:                 PropTypes.array,
