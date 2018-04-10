@@ -30,13 +30,18 @@ class CustomKeyboard extends Component {
 
   render() {
     let props = this.props;
+    let buttonsViewStyles = {
+      backgroundColor: props.buttonsBackgroundColor,
+      borderColor: props.buttonsBorderColor,
+      borderBottomWidth: props.buttonsBorderWidth
+    }
 
     return (
       <Modal animationType={'slide'} transparent={true} visible={props.visible}>
         <TouchableWithoutFeedback onPress={this.onCancelPress.bind(this)}>
           <View style={styles.container}>
             <View style={styles.modal}>
-              <View style={[styles.buttonview, { backgroundColor: props.buttonsBackgroundColor, borderColor: props.buttonsBorderColor, borderBottomWidth: props.buttonsBorderWidth }]}>
+              <View style={[styles.buttonview, buttonsViewStyles]}>
                 <KeyboardButton
                   color={props.buttonsTextColor}
                   onPress={this.onCancelPress.bind(this)}
@@ -55,7 +60,7 @@ class CustomKeyboard extends Component {
               </View>
 
               <View>
-                  {props.children}
+                {props.children}
               </View>
             </View>
           </View>

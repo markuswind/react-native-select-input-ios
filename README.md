@@ -56,8 +56,8 @@ react-native run-ios or react-native run-android
 | **Prop**                  | **Type**           | **Default**               | **Description**                                 |
 |---------------------------|--------------------|---------------------------|-------------------------------------------------|
 | `buttonsBackgroundColor`  | `PropTypes.string` | '#CCCFD6'                 | background color of buttons bar                 |
-| `buttonsBorderColor` 		| `PropTypes.string` | '#CCCFD6'                 |  color of buttons bar border                    |
-| `buttonsBorderWidth` 		| `PropTypes.number` | '0'                 		 | width of buttons bar border              	   |
+| `buttonsBorderColor`      | `PropTypes.string` | '#CCCFD6'                 |  color of buttons bar border                    |
+| `buttonsBorderWidth`      | `PropTypes.number` | '0'                       | width of buttons bar border                     |
 | `buttonsTextColor`        | `PropTypes.string` | '#006BFF'                 | text color of buttons in buttons bar            |
 | `buttonsTextSize`         | `PropTypes.number` | undefined                 | text size of buttons in buttons bar             |
 | `cancelKeyText`           | `PropTypes.string` | 'Cancel'                  | text of cancel button in buttons bar            |
