@@ -44,6 +44,11 @@ class PickerKeyboard extends Component {
   onCancelPress() {
     this.setVisible(false);
 
+    // When press cancel will set current value back to picker state
+    this.setState({
+      value: this.props.value
+    });
+
     let onCancel = this.props.onCancel;
     onCancel && onCancel();
   }
