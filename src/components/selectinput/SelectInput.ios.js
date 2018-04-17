@@ -82,7 +82,7 @@ SelectInput.propTypes = {
   buttonsTextSize:         PropTypes.number,
   cancelKeyText:           PropTypes.string,
   keyboardBackgroundColor: PropTypes.string,
-  labelStyle:              PropTypes.object, // FIXME: - use real proptype
+  labelStyle:              PropTypes.any , // FIXME: - use real proptype
   onEndEditing:            PropTypes.func,
   onSubmitEditing:         PropTypes.func,
   options:                 PropTypes.array,
