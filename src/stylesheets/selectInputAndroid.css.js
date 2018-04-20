@@ -11,6 +11,10 @@ const styles = StyleSheet.create({
     alignSelf:                  'center',
     fontSize:                   13,
   },
+  defaultPlaceholderStyle: {
+    paddingLeft:                8,
+    fontSize:                   12
+  }
 });
 
 export default styles;

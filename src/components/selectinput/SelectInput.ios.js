@@ -44,6 +44,7 @@ class SelectInput extends AbstractSelectInput {
     return (
       <TouchableWithoutFeedback onPress={this.focus.bind(this)}>
         <View style={props.style}>
+          {props.placeholder ? <Text style={props.placeholderStyle || styles.defaultPlaceholderStyle}>{props.placeholder}</Text> : null}
           <Text
             style={props.labelStyle || styles.defaultlabelstyle}
             adjustFontSizeToFit={true}
@@ -82,7 +83,9 @@ SelectInput.propTypes = {
   buttonsTextSize:         PropTypes.number,
   cancelKeyText:           PropTypes.string,
   keyboardBackgroundColor: PropTypes.string,
-  labelStyle:              PropTypes.any , // FIXME: - use real proptype
+  labelStyle:              PropTypes.oneOfType([Text.style, PropTypes.arrayOf(Text.style)]),
+  placeholder:             PropTypes.string,
+  placeholderStyle:        PropTypes.oneOfType([Text.style, PropTypes.arrayOf(Text.style)]),
   onEndEditing:            PropTypes.func,
   onSubmitEditing:         PropTypes.func,
   options:                 PropTypes.array,
