@@ -55,7 +55,7 @@ class SelectInput extends AbstractSelectInput {
 
 SelectInput.propTypes = {
   labelStyle: PropTypes.PropTypes.object,
-  placeholderStyle: PropTypes.PropTypes.object,
+  placeholderStyle: PropTypes.oneOfType([PropTypes.PropTypes.object, PropTypes.number]),
   placehdoler: PropTypes.string,
   mode:       PropTypes.oneOf(['dialog', 'dropdown']),
   options:    PropTypes.array,
