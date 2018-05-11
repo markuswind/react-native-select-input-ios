@@ -3,11 +3,12 @@
  * https://github.com/markuswind/react-native-select-input
  */
 
+import PropTypes from 'prop-types'
 import { Component } from 'react'
 
 class AbstractSelectInput extends Component {
   componentWillReceiveProps(nextProps) {
-    const { value } = this.props.value
+    const { value } = this.props
 
     if (nextProps.value !== value) {
       this.setState({
@@ -45,6 +46,14 @@ class AbstractSelectInput extends Component {
       }) || ''
     )
   }
+}
+
+AbstractSelectInput.propTypes = {
+  value: PropTypes.any,
+  onEndEditing: PropTypes.func,
+  onSubmitEditing: PropTypes.func,
+  options: PropTypes.array,
+  value: PropTypes.any
 }
 
 export default AbstractSelectInput

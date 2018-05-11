@@ -86,13 +86,14 @@ CustomKeyboard.propTypes = {
   buttonsBackgroundColor: PropTypes.string,
   buttonsBorderColor: PropTypes.string,
   buttonsBorderWidth: PropTypes.number,
-  buttonTextColor: PropTypes.string,
-  buttonTextSize: PropTypes.number,
+  buttonsTextColor: PropTypes.string,
+  buttonsTextSize: PropTypes.number,
   cancelKeyText: PropTypes.string,
   onCancelPress: PropTypes.func.isRequired,
   onSubmitPress: PropTypes.func.isRequired,
   submitKeyText: PropTypes.string,
-  visible: PropTypes.bool.isRequired
+  visible: PropTypes.bool.isRequired,
+  children: PropTypes.element
 }
 
 export default CustomKeyboard

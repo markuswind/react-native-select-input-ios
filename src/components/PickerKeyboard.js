@@ -118,6 +118,7 @@ PickerKeyboard.propTypes = {
   buttonsBorderWidth: PropTypes.number,
   buttonsTextColor: PropTypes.string,
   buttonsTextSize: PropTypes.number,
+  keyboardBackgroundColor: PropTypes.string,
   cancelKeyText: PropTypes.string,
   onCancel: PropTypes.func,
   onSubmit: PropTypes.func,
