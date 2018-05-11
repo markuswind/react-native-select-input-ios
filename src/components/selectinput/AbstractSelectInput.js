@@ -3,17 +3,16 @@
  * https://github.com/markuswind/react-native-select-input
  */
 
-import { Component } from 'react';
+import { Component } from 'react'
 
 class AbstractSelectInput extends Component {
-
   componentWillReceiveProps(nextProps) {
-    let currentValue = this.props.value;
+    const { value } = this.props.value
 
-    if (nextProps.value !== currentValue) {
+    if (nextProps.value !== value) {
       this.setState({
         selectedValue: nextProps.value
-      });
+      })
     }
   }
 
@@ -21,32 +20,31 @@ class AbstractSelectInput extends Component {
     // NOTE: - implemented on iOS only..
   }
 
-  onCancel() {
-    let props = this.props;
-
-    props.onEndEditing && props.onEndEditing();
+  onCancel = () => {
+    const { onEndEditing } = this.props
+    onEndEditing && onEndEditing()
   }
 
-  onSubmit(value) {
-    let onSubmitEditing = this.props.onSubmitEditing;
+  onSubmit = value => {
+    const { onSubmitEditing } = this.props
 
-    this.setState({selectedValue: value}, function() {
-      onSubmitEditing && onSubmitEditing(value);
-    });
+    this.setState({ selectedValue: value }, function() {
+      onSubmitEditing && onSubmitEditing(value)
+    })
   }
 
-  getValueLabel() {
-    let props = this.props;
-    let options = props.options || [{value: '', label: ''}];
+  getValueLabel = () => {
+    const { options, value } = this.props
+    const valueOptions = options || [{ value: '', label: '' }]
 
-    var label = options.map(function(object) {
-      if (object.value === props.value) {
-        return object.label;
-      }
-    });
-
-    return label || '';
+    return (
+      valueOptions.map(function(option) {
+        if (option.value === value) {
+          return option.label
+        }
+      }) || ''
+    )
   }
 }
 
-export default AbstractSelectInput;
+export default AbstractSelectInput

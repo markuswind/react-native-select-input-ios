@@ -1,19 +1,16 @@
-import {
-  Dimensions,
-  StyleSheet
-} from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native'
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_WIDTH = Dimensions.get('window').width
 
 const styles = StyleSheet.create({
   container: {
-    flex:                       1,
-    alignItems:                 'center',
-    justifyContent:             'flex-end',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end'
   },
   pickerview: {
-    width:                      SCREEN_WIDTH,
-  },
-});
+    width: SCREEN_WIDTH
+  }
+})
 
-export default styles;
+export default styles

@@ -1,3 +1,3 @@
-const SelectInput = require('./components/selectinput/SelectInput');
+const SelectInput = require('./components/selectinput/SelectInput')
 
-export default SelectInput.default;
+export default SelectInput.default

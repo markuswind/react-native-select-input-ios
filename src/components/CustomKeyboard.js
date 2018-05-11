@@ -2,85 +2,97 @@
  * CustomKeyboard
  * https://github.com/markuswind/react-native-select-input
  */
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import { Modal, TouchableWithoutFeedback, View } from 'react-native'
 
-import KeyboardButton from './KeyboardButton.js';
-import styles from './../stylesheets/customKeyboard.css.js';
-
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-
-import {
-  Modal,
-  TouchableWithoutFeedback,
-  View
-} from 'react-native';
+import KeyboardButton from './KeyboardButton.js'
+import styles from './../stylesheets/customKeyboard.css.js'
 
 class CustomKeyboard extends Component {
   constructor(props) {
-     super(props);
+    super(props)
   }
 
-  onCancelPress() {
-    this.props.onCancelPress();
+  onCancelPress = () => {
+    const { onCancelPress } = this.props
+    onCancelPress()
   }
 
-  onSubmitPress() {
-    this.props.onSubmitPress();
+  onSubmitPress = () => {
+    const { onSubmitPress } = this.props
+    onSubmitPress()
+  }
+
+  renderKeyBoardButton = (onPress, text, textAlign) => {
+    const { buttonsTextColor, buttonsTextSize } = this.props
+
+    return (
+      <KeyboardButton
+        color={buttonsTextColor}
+        onPress={onPress}
+        text={text}
+        textAlign={textAlign}
+        textSize={buttonsTextSize}
+      />
+    )
   }
 
   render() {
-    let props = this.props;
-    let buttonsViewStyles = {
-      backgroundColor: props.buttonsBackgroundColor,
-      borderColor: props.buttonsBorderColor,
-      borderBottomWidth: props.buttonsBorderWidth
+    const {
+      buttonsBackgroundColor,
+      buttonsBorderColor,
+      buttonsBorderWidth,
+      visible,
+      cancelKeyText,
+      submitKeyText,
+      children
+    } = this.props
+
+    const buttonsViewStyle = {
+      backgroundColor: buttonsBackgroundColor,
+      borderColor: buttonsBorderColor,
+      borderBottomWidth: buttonsBorderWidth
     }
 
     return (
-      <Modal animationType={'slide'} transparent={true} visible={props.visible}>
+      <Modal animationType={'slide'} transparent={true} visible={visible}>
         <TouchableWithoutFeedback onPress={this.onCancelPress.bind(this)}>
           <View style={styles.container}>
             <View style={styles.modal}>
-              <View style={[styles.buttonview, buttonsViewStyles]}>
-                <KeyboardButton
-                  color={props.buttonsTextColor}
-                  onPress={this.onCancelPress.bind(this)}
-                  text={props.cancelKeyText}
-                  textAlign={'left'}
-                  textSize={props.buttonsTextSize}
-                />
-
-                <KeyboardButton
-                  color={props.buttonsTextColor}
-                  onPress={this.onSubmitPress.bind(this)}
-                  text={props.submitKeyText}
-                  textAlign={'right'}
-                  textSize={props.buttonsTextSize}
-                />
+              <View style={[styles.buttonview, buttonsViewStyle]}>
+                {this.renderKeyBoardButton(
+                  this.onCancelPress,
+                  cancelKeyText,
+                  'left'
+                )}
+                {this.renderKeyBoardButton(
+                  this.onSubmitPress,
+                  submitKeyText,
+                  'right'
+                )}
               </View>
 
-              <View>
-                {props.children}
-              </View>
+              <View>{children}</View>
             </View>
           </View>
         </TouchableWithoutFeedback>
       </Modal>
-    );
+    )
   }
 }
 
-CustomKeyboard.propTypes =  {
+CustomKeyboard.propTypes = {
   buttonsBackgroundColor: PropTypes.string,
-  buttonsBorderColor:     PropTypes.string,
-  buttonsBorderWidth:     PropTypes.number,
-  buttonTextColor:        PropTypes.string,
-  buttonTextSize:         PropTypes.number,
-  cancelKeyText:          PropTypes.string,
-  onCancelPress:          PropTypes.func.isRequired,
-  onSubmitPress:          PropTypes.func.isRequired,
-  submitKeyText:          PropTypes.string,
-  visible:                PropTypes.bool.isRequired,
-};
+  buttonsBorderColor: PropTypes.string,
+  buttonsBorderWidth: PropTypes.number,
+  buttonTextColor: PropTypes.string,
+  buttonTextSize: PropTypes.number,
+  cancelKeyText: PropTypes.string,
+  onCancelPress: PropTypes.func.isRequired,
+  onSubmitPress: PropTypes.func.isRequired,
+  submitKeyText: PropTypes.string,
+  visible: PropTypes.bool.isRequired
+}
 
-export default CustomKeyboard;
+export default CustomKeyboard

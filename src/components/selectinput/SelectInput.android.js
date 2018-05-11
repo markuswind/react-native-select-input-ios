@@ -3,67 +3,63 @@
  * https://github.com/markuswind/react-native-select-input
  */
 
-import AbstractSelectInput from './AbstractSelectInput.js';
-import styles from './../../stylesheets/selectInputAndroid.css.js';
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Picker, View, ViewPropTypes } from 'react-native'
 
-import PropTypes from 'prop-types';
-import React from 'react';
+import AbstractSelectInput from './AbstractSelectInput.js'
 
-import { Picker, View, ViewPropTypes } from 'react-native';
+import styles from './../../stylesheets/selectInputAndroid.css.js'
 
 class SelectInput extends AbstractSelectInput {
   constructor(props) {
-    super(props);
+    super(props)
 
-    // refs
-    this.picker = null;
-
-    // initial state
+    this.picker = null
     this.state = {
       selectedValue: props.value
-    };
+    }
+  }
+
+  setPickerRef = component => {
+    this.picker = component
   }
 
   render() {
-    let props = this.props;
-    let state = this.state;
+    const { labelStyle, mode, options, style } = this.props
+    const { selectedValue } = this.state
 
     return (
-      <View style={props.style}>
+      <View style={style}>
         <Picker
-          ref={(c) => {this.picker = c; }}
-          mode={props.mode}
-          selectedValue={state.selectedValue}
-          onValueChange={this.onSubmit.bind(this)}
-          style={props.labelStyle || styles.defaultLabelStyle}
-          >
-            {props.options.map((option, index) => {
-              return (
-                <Picker.Item
-                  key={option.value}
-                  value={option.value}
-                  label={option.label}
-                />
-              );
-            })}
+          ref={this.setPickerRef}
+          onValueChange={this.onSubmit}
+          style={labelStyle || styles.defaultLabelStyle}
+          selectedValue={selectedValue}
+          mode={mode}
+        >
+          {renderPickerItems(options)}
         </Picker>
       </View>
-    );
+    )
   }
 }
 
 SelectInput.propTypes = {
   labelStyle: PropTypes.PropTypes.object,
-  mode:       PropTypes.oneOf(['dialog', 'dropdown']),
-  options:    PropTypes.array,
-  style:      PropTypes.oneOfType([ViewPropTypes.style, PropTypes.arrayOf(ViewPropTypes.style)]),
-  value:      PropTypes.any,
-};
+  mode: PropTypes.oneOf(['dialog', 'dropdown']),
+  options: PropTypes.array,
+  style: PropTypes.oneOfType([
+    ViewPropTypes.style,
+    PropTypes.arrayOf(ViewPropTypes.style)
+  ]),
+  value: PropTypes.any
+}
 
 SelectInput.defaultProps = {
-  mode:    'dialog',
+  mode: 'dialog',
   options: [{ value: 0, label: '0' }],
-  value:   0
-};
+  value: 0
+}
 
-export default SelectInput;
+export default SelectInput
