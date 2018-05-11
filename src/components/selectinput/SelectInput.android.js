@@ -12,19 +12,6 @@ import AbstractSelectInput from './AbstractSelectInput.js'
 import styles from './../../stylesheets/selectInputAndroid.css.js'
 
 class SelectInput extends AbstractSelectInput {
-  constructor(props) {
-    super(props)
-
-    this.picker = null
-    this.state = {
-      selectedValue: props.value
-    }
-  }
-
-  setPickerRef = component => {
-    this.picker = component
-  }
-
   render() {
     const { labelStyle, mode, options, style } = this.props
     const { selectedValue } = this.state
@@ -32,7 +19,6 @@ class SelectInput extends AbstractSelectInput {
     return (
       <View style={style}>
         <Picker
-          ref={this.setPickerRef}
           onValueChange={this.onSubmit}
           style={labelStyle || styles.defaultLabelStyle}
           selectedValue={selectedValue}

@@ -21,11 +21,7 @@ import styles from './../../stylesheets/selectInputIOS.css.js'
 class SelectInput extends AbstractSelectInput {
   constructor(props) {
     super(props)
-
     this.pickerKeyboard = null
-    this.state = {
-      selectedValue: props.value
-    }
   }
 
   setPickerKeyboardRef = component => {

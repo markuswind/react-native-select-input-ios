@@ -7,6 +7,14 @@ import PropTypes from 'prop-types'
 import { Component } from 'react'
 
 class AbstractSelectInput extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      selectedValue: props.value
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     const { value } = this.props
 
