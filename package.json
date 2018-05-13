@@ -1,11 +1,12 @@
 {
   "name": "react-native-select-input-ios",
   "version": "2.0.0",
-  "description": "A ReactNative SelectInput for iOS, which uses a keyboard with a Picker component",
-  "main": "./src/index.js",
-  "scripts": {
-    "lint": "./node_modules/.bin/eslint **/*.js",
-    "test": "npm run lint && cd example && jest"
+  "description": "A ReactNative SelectInput for iOS and Android, which uses a keyboard with a Picker component",
+  "author": "Markus Wind",
+  "license": "MIT",
+  "homepage": "https://github.com/markuswind/react-native-select-input-ios#readme",
+  "bugs": {
+    "url": "https://github.com/markuswind/react-native-select-input-ios/issues"
   },
   "repository": {
     "type": "git",
@@ -16,23 +17,31 @@
     "Select",
     "SelectInput",
     "SelectInputIOS",
+    "SelectInputAndroid",
     "Picker",
     "PickerIOS",
+    "PickerAndroid",
     "CustomKeyboard"
   ],
-  "author": "Markus Wind",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/markuswind/react-native-select-input-ios/issues"
+  "main": "./src/index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint **/*.js",
+    "test": "./node_modules/.bin/jest"
   },
-  "homepage": "https://github.com/markuswind/react-native-select-input-ios#readme",
+  "jest": {
+    "preset": "react-native"
+  },
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.7.0",
-    "jest": "^20.0.4",
-    "prettier": "^1.12.1"
+    "babel-eslint": "*",
+    "babel-preset-react-native": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-prettier": "*",
+    "eslint-plugin-react": "*",
+    "jest": "*",
+    "prettier": "*",
+    "react": "16.3.1",
+    "react-native": "0.55.4",
+    "react-test-renderer": "*"
   }
 }

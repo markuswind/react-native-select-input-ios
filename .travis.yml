@@ -3,14 +3,15 @@ node_js:
   - "5"
 
 install:
-  - npm install eslint
-  - npm install eslint-plugin-react
-  - cd example && npm install
+  - cd example
+  - npm install https://github.com/markuswind/react-native-select-input-ios/tarball/master
   - cd ../
+  - sh .update-example-module.sh
+  - npm install
+  - npm test
 
 script:
-# - eslint .
-  - cd example && npm test
+  - npm test
 
 branches:
   only:
