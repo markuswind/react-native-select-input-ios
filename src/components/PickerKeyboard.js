@@ -16,7 +16,7 @@ class PickerKeyboard extends Component {
   constructor(props) {
     super(props)
 
-    this.customKeyboard = null
+    this.picker = null
     this.state = {
       value: props.value,
       visible: false

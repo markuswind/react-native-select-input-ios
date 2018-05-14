@@ -12,21 +12,21 @@ const BUTTON_WIDTH = Dimensions.get('window').width * 0.25
 
 class KeyboardButton extends Component {
   render() {
-    let props = this.props
+    const { onPress, color, text, textAlign, textSize } = this.props
 
     return (
-      <TouchableOpacity onPress={props.onPress}>
+      <TouchableOpacity onPress={onPress}>
         <Text
           allowFontScaling={false}
           style={{
             width: BUTTON_WIDTH,
-            color: props.color,
-            textAlign: props.textAlign,
-            fontSize: props.textSize || null,
+            color: color,
+            textAlign: textAlign,
+            fontSize: textSize || null,
             padding: 8
           }}
         >
-          {props.text}
+          {text}
         </Text>
       </TouchableOpacity>
     )
