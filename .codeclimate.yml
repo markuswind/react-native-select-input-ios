@@ -13,8 +13,8 @@ engines:
 ratings:
   paths:
   - src/**
-  - example/index.ios.js
 exclude_paths:
+- "__tests__/"
 - ".eslintrc"
 - "android/"
 - "ios/"
