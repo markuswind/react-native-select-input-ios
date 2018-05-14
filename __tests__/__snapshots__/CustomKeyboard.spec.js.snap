@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
+<Modal
+  animationType="slide"
+  hardwareAccelerated={false}
+  transparent={true}
+  visible={false}
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "flex-end",
+      }
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#F5FCFF",
+          "justifyContent": "center",
+          "padding": 0,
+          "width": 750,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "borderTopColor": "lightgrey",
+              "borderTopWidth": 0.5,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "padding": 0,
+              "width": 750,
+            },
+            Object {
+              "backgroundColor": "#AAAAAA",
+              "borderBottomWidth": 1,
+              "borderColor": "#BBBBBB",
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#CCCCCC",
+                "fontSize": 13,
+                "padding": 8,
+                "textAlign": "left",
+                "width": 187.5,
+              }
+            }
+          >
+            cancelKeyText
+          </Text>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#CCCCCC",
+                "fontSize": 13,
+                "padding": 8,
+                "textAlign": "right",
+                "width": 187.5,
+              }
+            }
+          >
+            submitKeyText
+          </Text>
+        </View>
+      </View>
+      <View />
+    </View>
+  </View>
+</Modal>
+`;
+
+exports[`CustomKeyboard rendering renders keyboard button correctly 1`] = `
+<KeyboardButton
+  color="#CCCCCC"
+  onPress={[MockFunction]}
+  text="buttonText"
+  textAlign="left"
+  textSize={13}
+/>
+`;
