@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Picker } from 'react-native'
 
-import CustomKeyboard from './CustomKeyboard.js'
-import PickerItems from './PickerItems.js'
+import CustomKeyboard from '../CustomKeyboard'
+import PickerItems from '../PickerItems'
 
-import styles from './../stylesheets/pickerKeyboard.css.js'
+import propTypes from './types.js'
+import styles from './styles.js'
 
 class PickerKeyboard extends Component {
   constructor(props) {
@@ -110,21 +110,6 @@ class PickerKeyboard extends Component {
   }
 }
 
-PickerKeyboard.propTypes = {
-  buttonsBackgroundColor: PropTypes.string,
-  buttonsBorderColor: PropTypes.string,
-  buttonsBorderWidth: PropTypes.number,
-  buttonsTextColor: PropTypes.string,
-  buttonsTextSize: PropTypes.number,
-  keyboardBackgroundColor: PropTypes.string,
-  cancelKeyText: PropTypes.string,
-  onCancel: PropTypes.func,
-  onSubmit: PropTypes.func,
-  onValueChange: PropTypes.func,
-  options: PropTypes.array,
-  style: PropTypes.object,
-  submitKeyText: PropTypes.string,
-  value: PropTypes.any
-}
+PickerKeyboard.propTypes = propTypes
 
 export default PickerKeyboard

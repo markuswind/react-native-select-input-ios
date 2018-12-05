@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Picker } from 'react-native'
+
+import propTypes from './types.js'
 
 class PickerItems extends Component {
   render() {
@@ -16,8 +17,6 @@ class PickerItems extends Component {
   }
 }
 
-PickerItems.propTypes = {
-  options: PropTypes.array
-}
+PickerItems.propTypes = propTypes
 
 export default PickerItems

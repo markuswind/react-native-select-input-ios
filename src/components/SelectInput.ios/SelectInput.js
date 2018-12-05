@@ -1,17 +1,11 @@
-import PropTypes from 'prop-types'
 import React from 'react'
+import { Text, TouchableWithoutFeedback, View } from 'react-native'
 
-import {
-  Text,
-  TouchableWithoutFeedback,
-  View,
-  ViewPropTypes
-} from 'react-native'
+import AbstractSelectInput from '../AbstractSelectInput'
+import PickerKeyboard from '../PickerKeyboard'
 
-import AbstractSelectInput from './AbstractSelectInput.js'
-import PickerKeyboard from './../PickerKeyboard.js'
-
-import styles from './../../stylesheets/selectInputIOS.css.js'
+import styles from './styles'
+import propTypes, { defaultProps } from './types'
 
 class SelectInput extends AbstractSelectInput {
   constructor(props) {
@@ -87,36 +81,7 @@ class SelectInput extends AbstractSelectInput {
   }
 }
 
-SelectInput.propTypes = {
-  buttonsBackgroundColor: PropTypes.string,
-  buttonsBorderColor: PropTypes.string,
-  buttonsBorderWidth: PropTypes.number,
-  buttonsTextColor: PropTypes.string,
-  buttonsTextSize: PropTypes.number,
-  cancelKeyText: PropTypes.string,
-  keyboardBackgroundColor: PropTypes.string,
-  labelStyle: PropTypes.any, // FIXME: - use real proptype
-  onEndEditing: PropTypes.func,
-  onSubmitEditing: PropTypes.func,
-  options: PropTypes.array,
-  submitKeyText: PropTypes.string,
-  style: PropTypes.oneOfType([
-    ViewPropTypes.style,
-    PropTypes.arrayOf(ViewPropTypes.style)
-  ]),
-  value: PropTypes.any
-}
-
-SelectInput.defaultProps = {
-  cancelKeyText: 'Cancel',
-  keyboardBackgroundColor: '#FFFFFF',
-  buttonsBackgroundColor: '#CCCFD6',
-  buttonsTextColor: '#006BFF',
-  buttonsBorderColor: '#CCCFD6',
-  buttonsBorderWidth: 0,
-  options: [{ value: 0, label: '0' }],
-  submitKeyText: 'Done',
-  value: 0
-}
+SelectInput.propTypes = propTypes
+SelectInput.defaultProps = defaultProps
 
 export default SelectInput

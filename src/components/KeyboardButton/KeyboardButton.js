@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-
 import { Dimensions, Text, TouchableOpacity } from 'react-native'
+
+import propTypes from './types.js'
 
 const BUTTON_WIDTH = Dimensions.get('window').width * 0.25
 
@@ -28,12 +28,6 @@ class KeyboardButton extends Component {
   }
 }
 
-KeyboardButton.propTypes = {
-  color: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
-  textAlign: PropTypes.string.isRequired,
-  textSize: PropTypes.number
-}
+KeyboardButton.propTypes = propTypes
 
 export default KeyboardButton
