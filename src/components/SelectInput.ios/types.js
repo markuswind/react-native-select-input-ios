@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types'
 import { ViewPropTypes } from 'react-native'
 
+import selectInputPropTypes from '../AbstractSelectInput/types.js'
+
 export default {
+  ...selectInputPropTypes,
   buttonsBackgroundColor: PropTypes.string,
   buttonsBorderColor: PropTypes.string,
   buttonsBorderWidth: PropTypes.number,
@@ -9,16 +12,11 @@ export default {
   buttonsTextSize: PropTypes.number,
   cancelKeyText: PropTypes.string,
   keyboardBackgroundColor: PropTypes.string,
-  labelStyle: PropTypes.any, // FIXME: - use real proptype
-  onEndEditing: PropTypes.func,
-  onSubmitEditing: PropTypes.func,
-  options: PropTypes.array,
   submitKeyText: PropTypes.string,
   style: PropTypes.oneOfType([
     ViewPropTypes.style,
     PropTypes.arrayOf(ViewPropTypes.style)
   ]),
-  value: PropTypes.any
 }
 
 export const defaultProps = {
