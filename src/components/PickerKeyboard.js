@@ -57,6 +57,9 @@ class PickerKeyboard extends Component {
   }
 
   onValueChange = value => {
+    const { onValueChange } = this.props
+    onValueChange && onValueChange(value)
+
     this.setState({
       value: value
     })
@@ -122,6 +125,7 @@ PickerKeyboard.propTypes = {
   cancelKeyText: PropTypes.string,
   onCancel: PropTypes.func,
   onSubmit: PropTypes.func,
+  onValueChange: PropTypes.func,
   options: PropTypes.array,
   style: PropTypes.object,
   submitKeyText: PropTypes.string,

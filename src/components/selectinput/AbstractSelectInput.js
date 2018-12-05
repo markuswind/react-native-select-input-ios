@@ -34,12 +34,17 @@ class AbstractSelectInput extends Component {
     onEndEditing && onEndEditing()
   }
 
-  onSubmit = value => {
+    onSubmit = value => {
     const { onSubmitEditing } = this.props
 
     this.setState({ selectedValue: value }, function() {
       onSubmitEditing && onSubmitEditing(value)
     })
+  }
+
+  onValueChange = value => {
+    const { onValueChange } = this.props
+    onValueChange && onValueChange(value)
   }
 
   getValueLabel = () => {
@@ -60,6 +65,7 @@ AbstractSelectInput.propTypes = {
   value: PropTypes.any,
   onEndEditing: PropTypes.func,
   onSubmitEditing: PropTypes.func,
+  onValueChange: PropTypes.func,
   options: PropTypes.array,
   value: PropTypes.any
 }

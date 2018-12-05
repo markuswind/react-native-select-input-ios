@@ -65,6 +65,7 @@ react-native run-ios or react-native run-android
 | `mode`                    | `PropTypes.string` | 'dialog'                  | Picker mode on Android, 'dialog' or 'dropdown'  |
 | `onBeginEditing`          | `PropTypes.func`   | undefined                 | function that is called when keyboard is opened |
 | `onEndEditing`            | `PropTypes.func`   | undefined                 | function that is called when input is canceled  |
+| `onValueChange            | `PropTypes.func`   | undefined                 | function that is called when value is changed   |
 | `onSubmitEditing`         | `PropTypes.func`   | undefined                 | function that is called when input is submitted |
 | `options`                 | `PropTypes.array`  | [{ value: 0: label: '0'}] | picker options                                  |
 | `submitKeyText`           | `PropTypes.string` | 'Done'                    | Changes the text of the submit button           |

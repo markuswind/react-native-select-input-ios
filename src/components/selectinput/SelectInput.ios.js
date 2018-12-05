@@ -76,6 +76,7 @@ class SelectInput extends AbstractSelectInput {
             value={value}
             onCancel={this.onCancel}
             onSubmit={this.onSubmit}
+            onValueChange={this.onValueChange}
             buttonsBackgroundColor={buttonsBackgroundColor}
             buttonsBorderColor={buttonsBorderColor}
             buttonsBorderWidth={buttonsBorderWidth}
