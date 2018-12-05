@@ -1,8 +1,3 @@
-/**
- * SelectInput
- * https://github.com/markuswind/react-native-select-input
- */
-
 import PropTypes from 'prop-types'
 import { Component } from 'react'
 

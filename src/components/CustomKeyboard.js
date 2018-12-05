@@ -1,8 +1,3 @@
-/**
- * CustomKeyboard
- * https://github.com/markuswind/react-native-select-input
- */
-
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Modal, TouchableWithoutFeedback, View } from 'react-native'
@@ -11,10 +6,6 @@ import KeyboardButton from './KeyboardButton.js'
 import styles from './../stylesheets/customKeyboard.css.js'
 
 class CustomKeyboard extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   onCancelPress = () => {
     const { onCancelPress } = this.props
     onCancelPress()
