@@ -1,15 +1,10 @@
-/**
- * PickerKeyboard
- * https://github.com/markuswind/react-native-select-input
- */
-
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Picker } from 'react-native'
 
 import CustomKeyboard from './CustomKeyboard.js'
+import PickerItems from './PickerItems.js'
 
-import renderPickerItems from './selectinput/helpers/renderPickerItems'
 import styles from './../stylesheets/pickerKeyboard.css.js'
 
 class PickerKeyboard extends Component {
@@ -108,7 +103,7 @@ class PickerKeyboard extends Component {
             { backgroundColor: keyboardBackgroundColor }
           ]}
         >
-          {renderPickerItems(options)}
+          <PickerItems options={options} />
         </Picker>
       </CustomKeyboard>
     )
