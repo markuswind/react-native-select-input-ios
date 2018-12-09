@@ -1,83 +1,77 @@
-[![npm version](https://img.shields.io/npm/v/react-native-select-input-ios.svg?style=flat-square)](https://www.npmjs.com/package/react-native-select-input-ios)
-[![npm downloads](https://img.shields.io/npm/dm/react-native-select-input-ios.svg?style=flat-square)](https://www.npmjs.com/package/react-native-select-input-ios)
-[![Build Status](https://travis-ci.org/markuswind/react-native-select-input-ios.svg?branch=master)](https://travis-ci.org/markuswind/react-native-select-input-ios)
-[![Code Climate](https://codeclimate.com/github/markuswind/react-native-select-input-ios/badges/gpa.svg)](https://codeclimate.com/github/markuswind/react-native-select-input-ios)
-[![Issue Count](https://codeclimate.com/github/markuswind/react-native-select-input-ios/badges/issue_count.svg)](https://codeclimate.com/github/markuswind/react-native-select-input-ios)
+<center>
+<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/images/logo.png?raw=true" width=600px/> 
+</center>
 
-# React Native SelectInputIOS
+--- 
 
+[![npm version](https://img.shields.io/npm/v/react-native-select-input-ios.svg?style=flat-square)](https://www.npmjs.com/package/react-native-select-input-ios) [![npm downloads](https://img.shields.io/npm/dm/react-native-select-input-ios.svg?style=flat-square)](https://www.npmjs.com/package/react-native-select-input-ios) [![Build Status](https://travis-ci.org/markuswind/react-native-select-input-ios.svg?branch=master)](https://travis-ci.org/markuswind/react-native-select-input-ios) [![Code Climate](https://codeclimate.com/github/markuswind/react-native-select-input-ios/badges/gpa.svg)](https://codeclimate.com/github/markuswind/react-native-select-input-ios) [![Issue Count](https://codeclimate.com/github/markuswind/react-native-select-input-ios/badges/issue_count.svg)](https://codeclimate.com/github/markuswind/react-native-select-input-ios)
+
+<div  style="text-align:center">
 A React Native SelectInput for iOS (+Android) which shows the picker as a keyboard.
+</div>
 
-
-### Supported versions
-- `v1.1.3` requires `RN>=0.49`
-- Use `v1.1.2` for older RN versions.
+### Preview
+<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.ios.gif?raw=true" width=300px/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/images/example.android.gif?raw=true" width=300px/>
 
 ### Installation
 
-Installation can be done through ``npm`` or `yarn`:
-
-```shell
-npm i react-native-select-input-ios --save
-```
-
-```shell
-yarn add react-native-select-input-ios
-```
-
-### Preview
-<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.ios.gif?raw=true" width=300px/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.android.gif?raw=true" width=300px/>
-
-### Usage
-Import ``react-native-keyboard-select-input-ios`` and wrap your content inside
-it:
-
-```js
-import SelectInput from 'react-native-select-input-ios';
-```
-
-or:
-```js
-var SelectInput = require('react-native-select-input-ios');
-```
-
-### Example:
-Check example directory or clone repository and run the example!
+Installation can be done through `npm` or `yarn`:
 
 ```bash
-git clone https://github.com/markuswind/react-native-select-input-ios
-cd example
-npm install
-react-native run-ios or react-native run-android
+npm install react-native-select-input-ios --save
+# or
+yarn add react-native-select-input-ios
+```
+### Usage
+
+Import the `SelectInput` and wrap you content inside of it.
+
+```js
+import React from 'react'
+import { View } from 'react-native'
+import SelectInput from 'react-native-select-input-ios'
+
+class Component extends React.Component {
+  render() {
+    const options = [{ value: 0, label: '0']}
+    
+    return (
+      <View>
+	    <SelectInput value={0} options={options} />
+      </View>
+    )
+  }
+}
 ```
 
 ### Props
 
-| **Prop**                  | **Type**           | **Default**               | **Description**                                 |
-|---------------------------|--------------------|---------------------------|-------------------------------------------------|
-| `buttonsBackgroundColor`  | `PropTypes.string` | '#CCCFD6'                 | background color of buttons bar                 |
-| `buttonsBorderColor`      | `PropTypes.string` | '#CCCFD6'                 |  color of buttons bar border                    |
-| `buttonsBorderWidth`      | `PropTypes.number` | '0'                       | width of buttons bar border                     |
-| `buttonsTextColor`        | `PropTypes.string` | '#006BFF'                 | text color of buttons in buttons bar            |
-| `buttonsTextSize`         | `PropTypes.number` | undefined                 | text size of buttons in buttons bar             |
-| `cancelKeyText`           | `PropTypes.string` | 'Cancel'                  | text of cancel button in buttons bar            |
-| `keyboardBackgroundColor` | `PropTypes.string` | '#FFFFFF'                 | background color of picker keyboard             |
-| `mode`                    | `PropTypes.string` | 'dialog'                  | Picker mode on Android, 'dialog' or 'dropdown'  |
-| `onBeginEditing`          | `PropTypes.func`   | undefined                 | function that is called when keyboard is opened |
-| `onEndEditing`            | `PropTypes.func`   | undefined                 | function that is called when input is canceled  |
-| `onValueChange            | `PropTypes.func`   | undefined                 | function that is called when value is changed   |
-| `onSubmitEditing`         | `PropTypes.func`   | undefined                 | function that is called when input is submitted |
-| `options`                 | `PropTypes.array`  | [{ value: 0: label: '0'}] | picker options                                  |
-| `submitKeyText`           | `PropTypes.string` | 'Done'                    | Changes the text of the submit button           |
-| `value`                   | `PropTypes.any`    | undefined                 | initial selected value                          |
-| `style`                   | `PropTypes.object` | undefined                 | [View#style](https://facebook.github.io/react-native/docs/view.html#style "View#style") |
-| `labelStyle`              | `PropTypes.object` | undefined                 | [Text#style](https://facebook.github.io/react-native/docs/text.html#style "Text#style") |
+Check out the [properties wiki page](https://github.com/markuswind/react-native-select-input-ios/wiki/Properties) to see the list of available props to pass. Also check out the [methods wiki page](https://github.com/markuswind/react-native-select-input-ios/wiki/Methods) to see the list of callable methods available.
 
-### Methods
-| **Name**  | **Description**             |
-|-----------|-----------------------------|
-| `focus`   | toggles the picker keyboard |
+### Migrating to version 2.x.x
+
+There are some breaking changes introduced in version 2.0, see this [migration guide](https://github.com/markuswind/react-native-select-input-ios/wiki/Migrating-to-version-2.0) to fix this issues!
+
+### Example:
+
+Check out the repository and run the example project with the following commands:
+
+```bash
+# clone and open example project
+git clone https://github.com/markuswind/react-native-select-input-ios
+cd example
+
+# install dependencies with
+npm install 
+# or
+yarn install
+
+# run the project with
+react-native run-ios
+# or
+react-native run-android
+```
 
 ## License
 
-MIT.
+[MIT.](https://github.com/markuswind/react-native-select-input-ios/blob/master/LICENSE)
