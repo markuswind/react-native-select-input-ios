@@ -1,17 +1,13 @@
-<center>
 <img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/images/logo.png?raw=true" width=600px/> 
-</center>
 
 --- 
 
 [![npm version](https://img.shields.io/npm/v/react-native-select-input-ios.svg?style=flat-square)](https://www.npmjs.com/package/react-native-select-input-ios) [![npm downloads](https://img.shields.io/npm/dm/react-native-select-input-ios.svg?style=flat-square)](https://www.npmjs.com/package/react-native-select-input-ios) [![Build Status](https://travis-ci.org/markuswind/react-native-select-input-ios.svg?branch=master)](https://travis-ci.org/markuswind/react-native-select-input-ios) [![Code Climate](https://codeclimate.com/github/markuswind/react-native-select-input-ios/badges/gpa.svg)](https://codeclimate.com/github/markuswind/react-native-select-input-ios) [![Issue Count](https://codeclimate.com/github/markuswind/react-native-select-input-ios/badges/issue_count.svg)](https://codeclimate.com/github/markuswind/react-native-select-input-ios)
 
-<div  style="text-align:center">
-A React Native SelectInput for iOS (+Android) which shows the picker as a keyboard.
-</div>
+<p>A React Native SelectInput for iOS (+Android) which shows the picker as a keyboard.</p>
 
 ### Preview
-<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/screenshots/example.ios.gif?raw=true" width=300px/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/images/example.android.gif?raw=true" width=300px/>
+<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/images/example.ios.gif?raw=true" width=300px/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/markuswind/react-native-select-input-ios/blob/master/images/example.android.gif?raw=true" width=300px/>
 
 ### Installation
 
