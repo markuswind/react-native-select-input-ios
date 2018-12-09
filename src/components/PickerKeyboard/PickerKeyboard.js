@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Picker } from 'react-native'
 
 import CustomKeyboard from '../CustomKeyboard'
-import PickerItems from '../PickerItems'
 
 import propTypes from './types.js'
 import styles from './styles.js'
@@ -96,7 +95,13 @@ class PickerKeyboard extends Component {
           style={[styles.pickerview, pickerViewStyle]}
           itemStyle={pickerItemStyle}
         >
-          <PickerItems options={options} />
+          {options.map(option => (
+            <Picker.Item
+              key={option.value}
+              value={option.value}
+              label={option.label}
+            />
+          ))}
         </Picker>
       </CustomKeyboard>
     )
