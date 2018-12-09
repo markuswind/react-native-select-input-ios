@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import PickerKeyboard from './../src/components/PickerKeyboard'
+import PickerKeyboard from '../PickerKeyboard'
 
 const props = {
   buttonsBackgroundColor: '#FFFFFF',

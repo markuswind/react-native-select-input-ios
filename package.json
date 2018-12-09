@@ -1,10 +1,12 @@
 {
   "name": "react-native-select-input-ios",
   "version": "2.0.0",
-  "description": "A ReactNative SelectInput for iOS and Android, which uses a keyboard with a Picker component",
+  "description":
+    "A ReactNative SelectInput for iOS and Android, which uses a keyboard with a Picker component",
   "author": "Markus Wind",
   "license": "MIT",
-  "homepage": "https://github.com/markuswind/react-native-select-input-ios#readme",
+  "homepage":
+    "https://github.com/markuswind/react-native-select-input-ios#readme",
   "bugs": {
     "url": "https://github.com/markuswind/react-native-select-input-ios/issues"
   },
@@ -29,7 +31,11 @@
     "test": "./node_modules/.bin/jest"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "automock": false,
+    "testMatch": ["<rootDir>/src/**/__tests__/*.spec.js"],
+    "moduleFileExtensions": ["js", "jsx"],
+    "moduleDirectories": ["node_modules", "<rootDir>/src"]
   },
   "devDependencies": {
     "babel-eslint": "*",

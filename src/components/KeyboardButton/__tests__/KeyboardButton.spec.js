@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import KeyboardButton from './../src/components/KeyboardButton'
+import KeyboardButton from '../KeyboardButton'
 
 const props = {
   color: '#ABCDEF',

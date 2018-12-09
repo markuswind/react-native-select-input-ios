@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
+exports[`PickerKeyboard rendering renders correctly with given props 1`] = `
 <Modal
   animationType="slide"
   hardwareAccelerated={false}
@@ -53,9 +53,9 @@ exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
               "width": 750,
             },
             Object {
-              "backgroundColor": "#AAAAAA",
-              "borderBottomWidth": 1,
-              "borderColor": "#BBBBBB",
+              "backgroundColor": "#FFFFFF",
+              "borderBottomWidth": 0,
+              "borderColor": "#AAAAAA",
             },
           ]
         }
@@ -91,7 +91,7 @@ exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#CCCCCC",
+                "color": "#BBBBBB",
                 "fontSize": 13,
                 "padding": 8,
                 "textAlign": "left",
@@ -133,7 +133,7 @@ exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#CCCCCC",
+                "color": "#BBBBBB",
                 "fontSize": 13,
                 "padding": 8,
                 "textAlign": "right",
@@ -145,18 +145,45 @@ exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
           </Text>
         </View>
       </View>
-      <View />
+      <View>
+        <View
+          style={
+            Array [
+              Object {
+                "width": 750,
+              },
+              Object {
+                "backgroundColor": "#CCCCCC",
+              },
+            ]
+          }
+        >
+          <RCTPicker
+            items={
+              Array [
+                Object {
+                  "label": undefined,
+                  "textColor": undefined,
+                  "value": undefined,
+                },
+              ]
+            }
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            selectedIndex={0}
+            style={
+              Array [
+                Object {
+                  "height": 216,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
     </View>
   </View>
 </Modal>
-`;
-
-exports[`CustomKeyboard rendering renders keyboard button correctly 1`] = `
-<KeyboardButton
-  color="#CCCCCC"
-  onPress={[MockFunction]}
-  text="buttonText"
-  textAlign="left"
-  textSize={13}
-/>
 `;

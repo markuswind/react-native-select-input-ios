@@ -1,8 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { View } from 'react-native'
 
-import CustomKeyboard from './../src/components/CustomKeyboard'
+import CustomKeyboard from '../CustomKeyboard'
 
 const props = {
   buttonsBackgroundColor: '#AAAAAA',
@@ -23,20 +22,6 @@ describe('CustomKeyboard', () => {
     test('renders correctly with given props', () => {
       const customKeyboard = renderer.create(<CustomKeyboard {...props} />)
       expect(customKeyboard).toMatchSnapshot()
-    })
-
-    test('renders keyboard button correctly', () => {
-      const customKeyboard = renderer
-        .create(<CustomKeyboard {...props} />)
-        .getInstance()
-
-      const keyboardButton = customKeyboard.renderKeyBoardButton(
-        jest.fn(),
-        'buttonText',
-        'left'
-      )
-
-      expect(keyboardButton).toMatchSnapshot()
     })
   })
 
