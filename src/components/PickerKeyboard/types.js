@@ -10,7 +10,11 @@ export default {
     ViewPropTypes.style,
     PropTypes.arrayOf(ViewPropTypes.style)
   ]),
-  pickViewStyle: PropTypes.oneOfType([
+  pickerItemStyle: PropTypes.oneOfType([
+    ViewPropTypes.style,
+    PropTypes.arrayOf(ViewPropTypes.style)
+  ]),
+  pickerViewStyle: PropTypes.oneOfType([
     ViewPropTypes.style,
     PropTypes.arrayOf(ViewPropTypes.style)
   ]),

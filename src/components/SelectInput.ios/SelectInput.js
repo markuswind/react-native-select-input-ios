@@ -36,6 +36,7 @@ class SelectInput extends AbstractSelectInput {
     const {
       buttonsTextStyle,
       buttonsViewStyle,
+      pickerItemStyle,
       pickerViewStyle,
       options,
       labelStyle,
@@ -68,6 +69,7 @@ class SelectInput extends AbstractSelectInput {
             cancelKeyText={cancelKeyText}
             buttonsTextStyle={buttonsTextStyle}
             buttonsViewStyle={buttonsViewStyle}
+            pickerItemStyle={pickerItemStyle}
             pickerViewStyle={pickerViewStyle}
           />
         </View>

@@ -70,6 +70,7 @@ class PickerKeyboard extends Component {
     const {
       buttonsTextStyle,
       buttonsViewStyle,
+      pickerItemStyle,
       pickerViewStyle,
       cancelKeyText,
       submitKeyText,
@@ -93,6 +94,7 @@ class PickerKeyboard extends Component {
           onValueChange={this.onValueChange}
           selectedValue={value}
           style={[styles.pickerview, pickerViewStyle]}
+          itemStyle={pickerItemStyle}
         >
           <PickerItems options={options} />
         </Picker>
