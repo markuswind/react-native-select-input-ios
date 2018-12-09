@@ -23,11 +23,13 @@ class SelectInput extends AbstractSelectInput {
   }
 
   focus = () => {
-    const { onBeginEditing } = this.props
+    const { enabled, onBeginEditing } = this.props
     const pickerKeyboard = this.pickerKeyboard
 
-    pickerKeyboard && pickerKeyboard.focus()
-    onBeginEditing && onBeginEditing()
+    if (enabled) {
+      pickerKeyboard && pickerKeyboard.focus()
+      onBeginEditing && onBeginEditing()
+    }
   }
 
   render() {

@@ -20,6 +20,7 @@ export default {
 }
 
 export const defaultProps = {
+  enabled: true,
   cancelKeyText: 'Cancel',
   keyboardBackgroundColor: '#FFFFFF',
   buttonsBackgroundColor: '#CCCFD6',

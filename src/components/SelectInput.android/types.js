@@ -13,6 +13,7 @@ export default {
 }
 
 export const defaultProps = {
+  enabled: true,
   mode: 'dialog',
   options: [{ value: 0, label: '0' }],
   value: 0

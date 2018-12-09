@@ -8,12 +8,13 @@ import styles from './styles.js'
 
 class SelectInput extends AbstractSelectInput {
   render() {
-    const { labelStyle, mode, options, style } = this.props
+    const { enabled, labelStyle, mode, options, style } = this.props
     const { selectedValue } = this.state
 
     return (
       <View style={style}>
         <Picker
+          enabled={enabled}
           onValueChange={this.onSubmit}
           style={labelStyle || styles.defaultLabelStyle}
           selectedValue={selectedValue}
