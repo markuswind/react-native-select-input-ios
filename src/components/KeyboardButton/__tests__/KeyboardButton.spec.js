@@ -4,11 +4,13 @@ import renderer from 'react-test-renderer'
 import KeyboardButton from '../KeyboardButton'
 
 const props = {
-  color: '#ABCDEF',
   onPress: jest.fn(),
+  style: {
+    color: '#ABCDEF',
+    fontSize: 13,
+  },
   text: 'buttonText',
   textAlign: 'left',
-  textSize: 13
 }
 
 describe('KeyboardButton', () => {

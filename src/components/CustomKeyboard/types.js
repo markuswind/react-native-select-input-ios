@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
-import { ViewPropTypes } from 'react-native'
+import { TextStylePropTypes, ViewPropTypes } from 'react-native'
 
 export default {
   buttonsTextStyle: PropTypes.oneOfType([
-    ViewPropTypes.style,
-    PropTypes.arrayOf(ViewPropTypes.style)
+    PropTypes.instanceOf(TextStylePropTypes),
+    PropTypes.arrayOf(TextStylePropTypes)
   ]),
   buttonsViewStyle: PropTypes.oneOfType([
     ViewPropTypes.style,

@@ -4,11 +4,15 @@ import renderer from 'react-test-renderer'
 import CustomKeyboard from '../CustomKeyboard'
 
 const props = {
-  buttonsBackgroundColor: '#AAAAAA',
-  buttonsBorderColor: '#BBBBBB',
-  buttonsBorderWidth: 1,
-  buttonsTextColor: '#CCCCCC',
-  buttonsTextSize: 13,
+  buttonsViewStyle: {
+    backgroundColor: '#AAAAAA',
+    borderColor: '#BBBBBB',
+    borderBottomWidth: 1,
+  },
+  buttonsTextStyle: {
+    color: '#CCCCCC',
+    fontSize: 13
+  },
   cancelKeyText: 'cancelKeyText',
   onCancelPress: jest.fn(),
   onSubmitPress: jest.fn(),

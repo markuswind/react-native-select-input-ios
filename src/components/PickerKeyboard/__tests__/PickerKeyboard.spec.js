@@ -4,12 +4,18 @@ import renderer from 'react-test-renderer'
 import PickerKeyboard from '../PickerKeyboard'
 
 const props = {
-  buttonsBackgroundColor: '#FFFFFF',
-  buttonsBorderColor: '#AAAAAA',
-  buttonsBorderWidth: 0,
-  buttonsTextColor: '#BBBBBB',
-  buttonsTextSize: 13,
-  keyboardBackgroundColor: '#CCCCCC',
+  buttonsTextStyle: {
+    color: '#BBBBBB',
+    fontSize: 13,
+  },
+  buttonViewStyle: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#AAAAAA',
+    bottomBorderWidth: 0,
+  },
+  pickerViewStyle: {
+    backgroundColor: '#CCCCCC'
+  },
   cancelKeyText: 'cancelKeyText',
   onCancel: jest.fn(),
   onSubmit: jest.fn(),

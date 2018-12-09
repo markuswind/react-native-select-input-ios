@@ -8,13 +8,7 @@ exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
   visible={false}
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
     accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
@@ -28,7 +22,6 @@ exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
         "justifyContent": "flex-end",
       }
     }
-    testID={undefined}
   >
     <View
       style={
@@ -45,6 +38,9 @@ exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
         style={
           Array [
             Object {
+              "backgroundColor": "#CCCFD6",
+              "borderBottomWidth": 0,
+              "borderColor": "#CCCFD6",
               "borderTopColor": "lightgrey",
               "borderTopWidth": 0.5,
               "flexDirection": "row",
@@ -61,16 +57,8 @@ exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
         }
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -82,37 +70,31 @@ exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <Text
-            accessible={true}
             allowFontScaling={false}
-            ellipsizeMode="tail"
             style={
-              Object {
-                "color": "#CCCCCC",
-                "fontSize": 13,
-                "padding": 8,
-                "textAlign": "left",
-                "width": 187.5,
-              }
+              Array [
+                Object {
+                  "color": "#006BFF",
+                  "padding": 8,
+                },
+                Object {
+                  "color": "#CCCCCC",
+                  "fontSize": 13,
+                },
+                Object {
+                  "textAlign": "left",
+                },
+              ]
             }
           >
             cancelKeyText
           </Text>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -124,21 +106,23 @@ exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <Text
-            accessible={true}
             allowFontScaling={false}
-            ellipsizeMode="tail"
             style={
-              Object {
-                "color": "#CCCCCC",
-                "fontSize": 13,
-                "padding": 8,
-                "textAlign": "right",
-                "width": 187.5,
-              }
+              Array [
+                Object {
+                  "color": "#006BFF",
+                  "padding": 8,
+                },
+                Object {
+                  "color": "#CCCCCC",
+                  "fontSize": 13,
+                },
+                Object {
+                  "textAlign": "right",
+                },
+              ]
             }
           >
             submitKeyText
