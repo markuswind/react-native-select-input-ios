@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types'
+import { ViewPropTypes } from 'react-native'
 
 export default {
-  buttonsBackgroundColor: PropTypes.string,
-  buttonsBorderColor: PropTypes.string,
-  buttonsBorderWidth: PropTypes.number,
-  buttonsTextColor: PropTypes.string,
-  buttonsTextSize: PropTypes.number,
+  buttonsTextStyle: PropTypes.oneOfType([
+    ViewPropTypes.style,
+    PropTypes.arrayOf(ViewPropTypes.style)
+  ]),
+  buttonsViewStyle: PropTypes.oneOfType([
+    ViewPropTypes.style,
+    PropTypes.arrayOf(ViewPropTypes.style)
+  ]),
   cancelKeyText: PropTypes.string,
   onCancelPress: PropTypes.func.isRequired,
   onSubmitPress: PropTypes.func.isRequired,

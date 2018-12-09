@@ -19,8 +19,11 @@ const styles = StyleSheet.create({
     width: SCREEN_WIDTH,
     padding: 0,
     borderTopWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: 0,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    backgroundColor: '#CCCFD6',
+    borderColor: '#CCCFD6',
     borderTopColor: 'lightgrey'
   },
   picker_bottom: {

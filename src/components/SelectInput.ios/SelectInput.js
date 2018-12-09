@@ -34,12 +34,9 @@ class SelectInput extends AbstractSelectInput {
 
   render() {
     const {
-      buttonsBackgroundColor,
-      buttonsBorderColor,
-      buttonsBorderWidth,
-      buttonsTextColor,
-      buttonsTextSize,
-      keyboardBackgroundColor,
+      buttonsTextStyle,
+      buttonsViewStyle,
+      pickerViewStyle,
       options,
       labelStyle,
       style,
@@ -48,7 +45,6 @@ class SelectInput extends AbstractSelectInput {
       value
     } = this.props
 
-    // TODO: - add fully customizable styles
     return (
       <TouchableWithoutFeedback onPress={this.focus}>
         <View style={style}>
@@ -68,14 +64,11 @@ class SelectInput extends AbstractSelectInput {
             onCancel={this.onCancel}
             onSubmit={this.onSubmit}
             onValueChange={this.onValueChange}
-            buttonsBackgroundColor={buttonsBackgroundColor}
-            buttonsBorderColor={buttonsBorderColor}
-            buttonsBorderWidth={buttonsBorderWidth}
-            buttonsTextColor={buttonsTextColor}
-            buttonsTextSize={buttonsTextSize}
-            keyboardBackgroundColor={keyboardBackgroundColor}
             submitKeyText={submitKeyText}
             cancelKeyText={cancelKeyText}
+            buttonsTextStyle={buttonsTextStyle}
+            buttonsViewStyle={buttonsViewStyle}
+            pickerViewStyle={pickerViewStyle}
           />
         </View>
       </TouchableWithoutFeedback>

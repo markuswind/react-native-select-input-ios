@@ -68,14 +68,11 @@ class PickerKeyboard extends Component {
 
   render() {
     const {
-      buttonsBackgroundColor,
-      buttonsTextColor,
-      buttonsTextSize,
-      buttonsBorderColor,
-      buttonsBorderWidth,
+      buttonsTextStyle,
+      buttonsViewStyle,
+      pickerViewStyle,
       cancelKeyText,
       submitKeyText,
-      keyboardBackgroundColor,
       options
     } = this.props
 
@@ -83,11 +80,8 @@ class PickerKeyboard extends Component {
 
     return (
       <CustomKeyboard
-        buttonsBackgroundColor={buttonsBackgroundColor}
-        buttonsTextColor={buttonsTextColor}
-        buttonsTextSize={buttonsTextSize}
-        buttonsBorderColor={buttonsBorderColor}
-        buttonsBorderWidth={buttonsBorderWidth}
+        buttonsTextStyle={buttonsTextStyle}
+        buttonsViewStyle={buttonsViewStyle}
         cancelKeyText={cancelKeyText}
         onCancelPress={this.onCancelPress}
         onSubmitPress={this.onSubmitPress}
@@ -98,10 +92,7 @@ class PickerKeyboard extends Component {
           ref={this.setPickerRef}
           onValueChange={this.onValueChange}
           selectedValue={value}
-          style={[
-            styles.pickerview,
-            { backgroundColor: keyboardBackgroundColor }
-          ]}
+          style={[styles.pickerview, pickerViewStyle]}
         >
           <PickerItems options={options} />
         </Picker>

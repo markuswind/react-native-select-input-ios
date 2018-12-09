@@ -19,22 +19,13 @@ class CustomKeyboard extends Component {
 
   render() {
     const {
-      buttonsBackgroundColor,
-      buttonsBorderColor,
-      buttonsBorderWidth,
-      buttonsTextColor,
-      buttonsTextSize,
+      buttonsTextStyle,
+      buttonsViewStyle,
       visible,
       cancelKeyText,
       submitKeyText,
       children
     } = this.props
-
-    const buttonsViewStyle = {
-      backgroundColor: buttonsBackgroundColor,
-      borderColor: buttonsBorderColor,
-      borderBottomWidth: buttonsBorderWidth
-    }
 
     return (
       <Modal animationType={'slide'} transparent={true} visible={visible}>
@@ -43,19 +34,17 @@ class CustomKeyboard extends Component {
             <View style={styles.modal}>
               <View style={[styles.buttonview, buttonsViewStyle]}>
                 <KeyboardButton
-                  color={buttonsTextColor}
                   onPress={this.onCancelPress}
+                  style={buttonsTextStyle}
                   text={cancelKeyText}
                   textAlign={'left'}
-                  textSize={buttonsTextSize}
                 />
 
                 <KeyboardButton
-                  color={buttonsTextColor}
                   onPress={this.onSubmitPress}
+                  style={buttonsTextStyle}
                   text={submitKeyText}
                   textAlign={'right'}
-                  textSize={buttonsTextSize}
                 />
               </View>
 
