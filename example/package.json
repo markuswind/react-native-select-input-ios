@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "prop-types": "^15.5.10",
-    "react": "16.0.0-alpha.6",
-    "react-native": "0.44.2",
+    "react": "16.5.0",
+    "react-native": "0.57.2",
     "react-native-select-input-ios": "git+https://git@github.com/markuswind/react-native-select-input-ios.git"
   },
   "devDependencies": {
@@ -17,7 +17,7 @@
     "babel-preset-env": "*",
     "babel-preset-react-native": "*",
     "jest": "*",
-    "react-test-renderer": "*"
+    "react-test-renderer": "16.5.0"
   },
   "jest": {
     "preset": "react-native"
