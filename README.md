@@ -33,7 +33,7 @@ class Component extends React.Component {
     
     return (
       <View>
-	    <SelectInput value={0} options={options} />
+        <SelectInput value={0} options={options} />
       </View>
     )
   }
