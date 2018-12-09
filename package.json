@@ -1,11 +1,12 @@
 {
   "name": "react-native-select-input-ios",
-  "version": "1.2.0",
-  "description": "A ReactNative SelectInput for iOS, which uses a keyboard with a Picker component",
-  "main": "./src/index.js",
-  "scripts": {
-    "lint": "eslint *.js",
-    "test": "eslint *.js && cd example && jest"
+  "version": "2.0.0",
+  "description": "A ReactNative SelectInput for iOS and Android, which uses a keyboard with a Picker component",
+  "author": "Markus Wind",
+  "license": "MIT",
+  "homepage": "https://github.com/markuswind/react-native-select-input-ios#readme",
+  "bugs": {
+    "url": "https://github.com/markuswind/react-native-select-input-ios/issues"
   },
   "repository": {
     "type": "git",
@@ -16,23 +17,43 @@
     "Select",
     "SelectInput",
     "SelectInputIOS",
+    "SelectInputAndroid",
     "Picker",
     "PickerIOS",
+    "PickerAndroid",
     "CustomKeyboard"
   ],
-  "author": "Markus Wind",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/markuswind/react-native-select-input-ios/issues"
+  "main": "./src/index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint **/*.js",
+    "test": "./node_modules/.bin/jest"
   },
-  "homepage": "https://github.com/markuswind/react-native-select-input-ios#readme",
+  "jest": {
+    "preset": "react-native",
+    "automock": false,
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/*.spec.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "<rootDir>/node_modules",
+      "<rootDir>/src"
+    ]
+  },
   "devDependencies": {
-    "babel-eslint": "^6.1.0",
-    "eslint": "^2.13.1",
-    "eslint-config-airbnb": "9.0.1",
-    "eslint-plugin-import": "1.9.2",
-    "eslint-plugin-jsx-a11y": "1.5.3",
-    "eslint-plugin-react": "^5.2.2",
-    "jest": "^20.0.4"
+    "babel-eslint": "*",
+    "babel-preset-react-native": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-prettier": "*",
+    "eslint-plugin-react": "*",
+    "jest": "*",
+    "prettier": "*",
+    "react": "16.5.0",
+    "react-native": "0.57.2",
+    "react-test-renderer": "*"
   }
 }

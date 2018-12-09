@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KeyboardButton renders correctly with given props 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      Array [
+        Object {
+          "color": "#006BFF",
+          "padding": 8,
+        },
+        Object {
+          "color": "#ABCDEF",
+          "fontSize": 13,
+        },
+        Object {
+          "textAlign": "left",
+        },
+      ]
+    }
+  >
+    buttonText
+  </Text>
+</View>
+`;

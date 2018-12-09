@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomKeyboard rendering renders correctly with given props 1`] = `
+<Modal
+  animationType="slide"
+  hardwareAccelerated={false}
+  transparent={true}
+  visible={false}
+>
+  <View
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "flex-end",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#F5FCFF",
+          "justifyContent": "center",
+          "padding": 0,
+          "width": 750,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#CCCFD6",
+              "borderBottomWidth": 0,
+              "borderColor": "#CCCFD6",
+              "borderTopColor": "lightgrey",
+              "borderTopWidth": 0.5,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "padding": 0,
+              "width": 750,
+            },
+            Object {
+              "backgroundColor": "#AAAAAA",
+              "borderBottomWidth": 1,
+              "borderColor": "#BBBBBB",
+            },
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#006BFF",
+                  "padding": 8,
+                },
+                Object {
+                  "color": "#CCCCCC",
+                  "fontSize": 13,
+                },
+                Object {
+                  "textAlign": "left",
+                },
+              ]
+            }
+          >
+            cancelKeyText
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#006BFF",
+                  "padding": 8,
+                },
+                Object {
+                  "color": "#CCCCCC",
+                  "fontSize": 13,
+                },
+                Object {
+                  "textAlign": "right",
+                },
+              ]
+            }
+          >
+            submitKeyText
+          </Text>
+        </View>
+      </View>
+      <View />
+    </View>
+  </View>
+</Modal>
+`;
