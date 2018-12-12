@@ -20,7 +20,13 @@ class SelectInput extends AbstractSelectInput {
           selectedValue={selectedValue}
           mode={mode}
         >
-          {renderPickerItems(options)}
+          {options.map(option => (
+            <Picker.Item
+              key={option.value}
+              value={option.value}
+              label={option.label}
+            />
+          ))}
         </Picker>
       </View>
     )
