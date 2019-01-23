@@ -27,7 +27,7 @@ import SelectInput from 'react-native-select-input-ios'
 
 class Component extends React.Component {
   render() {
-    const options = [{ value: 0, label: '0'}]
+    const options = [{ value: 0, label: '0' }]
     
     return (
       <View>
