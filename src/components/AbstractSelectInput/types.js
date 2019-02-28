@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import { ViewPropTypes } from 'react-native'
+import { TextStylePropTypes } from 'react-native'
 
 export default {
   enabled: PropTypes.bool,
   labelStyle: PropTypes.oneOfType([
-    ViewPropTypes.style,
-    PropTypes.arrayOf(ViewPropTypes.style)
+    TextStylePropTypes.style,
+    PropTypes.arrayOf(TextStylePropTypes.style)
   ]),
   onEndEditing: PropTypes.func,
   onSubmitEditing: PropTypes.func,
