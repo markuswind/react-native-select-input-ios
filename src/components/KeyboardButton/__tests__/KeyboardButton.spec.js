@@ -5,12 +5,12 @@ import KeyboardButton from '../KeyboardButton'
 
 const props = {
   onPress: jest.fn(),
-  style: {
-    color: '#ABCDEF',
-    fontSize: 13,
-  },
   text: 'buttonText',
   textAlign: 'left',
+  textStyle: {
+    color: '#ABCDEF',
+    fontSize: 13
+  }
 }
 
 describe('KeyboardButton', () => {

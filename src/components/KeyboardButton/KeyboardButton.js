@@ -6,13 +6,13 @@ import propTypes from './types.js'
 
 class KeyboardButton extends Component {
   render() {
-    const { onPress, style, text, textAlign, } = this.props
+    const { onPress, text, textAlign, textStyle } = this.props
 
     return (
       <TouchableOpacity onPress={onPress}>
         <Text
           allowFontScaling={false}
-          style={[styles.buttontext, style, { textAlign: textAlign }]}
+          style={[styles.buttontext, textStyle, { textAlign: textAlign }]}
         >
           {text}
         </Text>
