@@ -35,16 +35,16 @@ class CustomKeyboard extends Component {
               <View style={[styles.buttonview, buttonsViewStyle]}>
                 <KeyboardButton
                   onPress={this.onCancelPress}
-                  style={buttonsTextStyle}
                   text={cancelKeyText}
                   textAlign={'left'}
+                  textStyle={buttonsTextStyle}
                 />
 
                 <KeyboardButton
                   onPress={this.onSubmitPress}
-                  style={buttonsTextStyle}
                   text={submitKeyText}
                   textAlign={'right'}
+                  textStyle={buttonsTextStyle}
                 />
               </View>
 

@@ -9,7 +9,7 @@ export default {
   style: PropTypes.oneOfType([
     ViewPropTypes.style,
     PropTypes.arrayOf(ViewPropTypes.style)
-  ]),
+  ])
 }
 
 export const defaultProps = {
