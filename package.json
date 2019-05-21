@@ -1,7 +1,7 @@
 {
   "name": "react-native-select-input-ios",
   "version": "2.0.2",
-  "description": "A ReactNative SelectInput for iOS and Android, which uses a keyboard with a Picker component",
+  "description": "A React Native SelectInput for iOS and Android, which uses a keyboard with a Picker component",
   "author": "Markus Wind",
   "license": "MIT",
   "homepage": "https://github.com/markuswind/react-native-select-input-ios#readme",
