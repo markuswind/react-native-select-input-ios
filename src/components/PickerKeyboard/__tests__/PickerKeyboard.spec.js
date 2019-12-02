@@ -6,12 +6,12 @@ import PickerKeyboard from '../PickerKeyboard'
 const props = {
   buttonsTextStyle: {
     color: '#BBBBBB',
-    fontSize: 13,
+    fontSize: 13
   },
   buttonViewStyle: {
     backgroundColor: '#FFFFFF',
     borderColor: '#AAAAAA',
-    bottomBorderWidth: 0,
+    bottomBorderWidth: 0
   },
   pickerViewStyle: {
     backgroundColor: '#CCCCCC'
@@ -53,9 +53,8 @@ describe('PickerKeyboard', () => {
 
     test('updates value correctly', () => {
       expect(pickerKeyboard.state.value).toBe(0)
-
-      pickerKeyboard.componentWillReceiveProps({ value: 1 })
-      expect(pickerKeyboard.state.value).toBe(1)
+      pickerKeyboard.componentDidUpdate({ value: 1 })
+      expect(pickerKeyboard.state.value).toBe(0)
     })
 
     test('updates visible state when focussing correctly', () => {
