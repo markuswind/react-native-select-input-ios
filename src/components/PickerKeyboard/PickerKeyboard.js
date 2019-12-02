@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Picker } from 'react-native'
+import { Dimensions, Picker } from 'react-native'
 
 import CustomKeyboard from '../CustomKeyboard'
 
@@ -13,8 +13,23 @@ class PickerKeyboard extends Component {
     this.picker = null
     this.state = {
       value: props.value,
-      visible: false
+      visible: false,
+      width: Dimensions.get('window').width
     }
+  }
+
+  componentDidMount() {
+    Dimensions.addEventListener('change', this.updateDimensions)
+  }
+
+  componentWillUnmount() {
+    Dimensions.removeEventListener('change', this.updateDimensions)
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      width: Dimensions.get('window').width
+    })
   }
 
   setPickerRef = component => {
@@ -67,6 +82,7 @@ class PickerKeyboard extends Component {
   }
 
   render() {
+    const { value, visible, width } = this.state
     const {
       buttonsTextStyle,
       buttonsViewStyle,
@@ -76,8 +92,6 @@ class PickerKeyboard extends Component {
       submitKeyText,
       options
     } = this.props
-
-    const { value, visible } = this.state
 
     return (
       <CustomKeyboard
@@ -93,7 +107,7 @@ class PickerKeyboard extends Component {
           ref={this.setPickerRef}
           onValueChange={this.onValueChange}
           selectedValue={value}
-          style={[styles.pickerview, pickerViewStyle]}
+          style={[styles.pickerview, pickerViewStyle, { width }]}
           itemStyle={pickerItemStyle}
         >
           {options.map(option => (

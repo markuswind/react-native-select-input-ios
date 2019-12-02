@@ -4,6 +4,15 @@ exports[`PickerKeyboard rendering renders correctly with given props 1`] = `
 <Modal
   animationType="slide"
   hardwareAccelerated={false}
+  onOrientationChange={[Function]}
+  supportedOrientations={
+    Array [
+      "portrait",
+      "landscape",
+      "landscape-left",
+      "landscape-right",
+    ]
+  }
   transparent={true}
   visible={false}
 >
@@ -25,13 +34,17 @@ exports[`PickerKeyboard rendering renders correctly with given props 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#F5FCFF",
-          "justifyContent": "center",
-          "padding": 0,
-          "width": 750,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F5FCFF",
+            "justifyContent": "center",
+            "padding": 0,
+          },
+          Object {
+            "width": 750,
+          },
+        ]
       }
     >
       <View
@@ -46,9 +59,11 @@ exports[`PickerKeyboard rendering renders correctly with given props 1`] = `
               "flexDirection": "row",
               "justifyContent": "space-between",
               "padding": 0,
-              "width": 750,
             },
             undefined,
+            Object {
+              "width": 750,
+            },
           ]
         }
       >
@@ -131,10 +146,12 @@ exports[`PickerKeyboard rendering renders correctly with given props 1`] = `
             Array [
               Object {
                 "backgroundColor": "#FFFFFF",
-                "width": 750,
               },
               Object {
                 "backgroundColor": "#CCCCCC",
+              },
+              Object {
+                "width": 750,
               },
             ]
           }
