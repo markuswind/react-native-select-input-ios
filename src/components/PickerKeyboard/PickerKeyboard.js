@@ -21,12 +21,13 @@ class PickerKeyboard extends Component {
     this.picker = component
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { value } = this.state
+  componentDidUpdate(prevProps) {
+    const { value } = this.props
+    const prevValue = prevProps.value
 
-    if (nextProps.value !== value) {
+    if (value !== prevValue) {
       this.setState({
-        value: nextProps.value
+        value
       })
     }
   }
