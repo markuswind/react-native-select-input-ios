@@ -11,12 +11,13 @@ class AbstractSelectInput extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
     const { value } = this.props
+    const prevValue = prevProps.value
 
-    if (nextProps.value !== value) {
+    if (value !== prevValue) {
       this.setState({
-        selectedValue: nextProps.value
+        selectedValue: value
       })
     }
   }
