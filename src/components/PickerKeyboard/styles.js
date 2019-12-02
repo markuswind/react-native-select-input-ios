@@ -1,6 +1,4 @@
-import { Dimensions, StyleSheet } from 'react-native'
-
-const SCREEN_WIDTH = Dimensions.get('window').width
+import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
@@ -9,7 +7,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end'
   },
   pickerview: {
-    width: SCREEN_WIDTH,
     backgroundColor: '#FFFFFF'
   }
 })

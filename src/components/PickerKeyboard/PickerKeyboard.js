@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Picker } from 'react-native'
+import { Dimensions, Picker } from 'react-native'
 
 import CustomKeyboard from '../CustomKeyboard'
 
@@ -78,6 +78,7 @@ class PickerKeyboard extends Component {
     } = this.props
 
     const { value, visible } = this.state
+    const width = Dimensions.get('window').width
 
     return (
       <CustomKeyboard
@@ -93,7 +94,7 @@ class PickerKeyboard extends Component {
           ref={this.setPickerRef}
           onValueChange={this.onValueChange}
           selectedValue={value}
-          style={[styles.pickerview, pickerViewStyle]}
+          style={[styles.pickerview, pickerViewStyle, { width }]}
           itemStyle={pickerItemStyle}
         >
           {options.map(option => (
