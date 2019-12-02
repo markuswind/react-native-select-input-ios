@@ -1,13 +1,5 @@
 import React, {Component} from 'react';
-import {
-  AppRegistry,
-  Dimensions,
-  Image,
-  StyleSheet,
-  ScrollView,
-  Text,
-  View,
-} from 'react-native';
+import {Image, StyleSheet, ScrollView, Text, View} from 'react-native';
 import SelectInput from 'react-native-select-input-ios';
 
 export default class App extends Component {
@@ -112,14 +104,13 @@ export default class App extends Component {
   }
 }
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
 const MARGIN_SMALL = 8;
 const MARGIN_LARGE = 16;
 
 const styles = StyleSheet.create({
   scrollViewContentContainer: {
     flex: 1,
-    width: SCREEN_WIDTH,
+    width: '100%',
     padding: MARGIN_LARGE,
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -133,6 +124,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   smallInputWrapper: {
+    width: '45%',
     flexDirection: 'column',
   },
   selectInput: {
@@ -145,10 +137,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   selectInputSmall: {
-    width: SCREEN_WIDTH * 0.5 - MARGIN_LARGE * 2,
+    width: '100%',
   },
   selectInputLarge: {
-    width: SCREEN_WIDTH - MARGIN_LARGE * 2,
+    width: '100%',
+    paddingHorizontal: MARGIN_LARGE,
   },
   bananawrapper: {
     margin: MARGIN_LARGE * 2,
@@ -158,9 +151,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   line: {
-    width: SCREEN_WIDTH * 0.75,
     height: 1,
-    marginLeft: SCREEN_WIDTH * 0.075,
+    marginHorizontal: MARGIN_SMALL,
     backgroundColor: 'black',
   },
 });
