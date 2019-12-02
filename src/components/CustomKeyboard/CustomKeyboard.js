@@ -7,6 +7,16 @@ import propTypes from './types.js'
 import styles from './styles.js'
 
 class CustomKeyboard extends Component {
+  state = {
+    width: Dimensions.get('window').width
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      width: Dimensions.get('window').width
+    })
+  }
+
   onCancelPress = () => {
     const { onCancelPress } = this.props
     onCancelPress()
@@ -18,7 +28,7 @@ class CustomKeyboard extends Component {
   }
 
   render() {
-    const width = Dimensions.get('window').width
+    const { width } = this.state
     const {
       buttonsTextStyle,
       buttonsViewStyle,
@@ -33,6 +43,7 @@ class CustomKeyboard extends Component {
         animationType={'slide'}
         transparent={true}
         visible={visible}
+        onOrientationChange={this.updateDimensions}
         supportedOrientations={[
           'portrait',
           'landscape',

@@ -13,8 +13,23 @@ class PickerKeyboard extends Component {
     this.picker = null
     this.state = {
       value: props.value,
-      visible: false
+      visible: false,
+      width: Dimensions.get('window').width
     }
+  }
+
+  componentDidMount() {
+    Dimensions.addEventListener('change', this.updateDimensions)
+  }
+
+  componentWillUnmount() {
+    Dimensions.removeEventListener('change', this.updateDimensions)
+  }
+
+  updateDimensions = () => {
+    this.setState({
+      width: Dimensions.get('window').width
+    })
   }
 
   setPickerRef = component => {
@@ -67,6 +82,7 @@ class PickerKeyboard extends Component {
   }
 
   render() {
+    const { value, visible, width } = this.state
     const {
       buttonsTextStyle,
       buttonsViewStyle,
@@ -76,9 +92,6 @@ class PickerKeyboard extends Component {
       submitKeyText,
       options
     } = this.props
-
-    const { value, visible } = this.state
-    const width = Dimensions.get('window').width
 
     return (
       <CustomKeyboard
