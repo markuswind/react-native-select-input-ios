@@ -53,7 +53,7 @@ class AbstractSelectInput extends Component {
         if (option.value === value) {
           return option.label
         }
-      }) || ''
+      }).filter(v => v).join(', ') || ''
     )
   }
 }
