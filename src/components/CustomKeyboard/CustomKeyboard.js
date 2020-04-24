@@ -51,7 +51,7 @@ class CustomKeyboard extends Component {
           'landscape-right'
         ]}
       >
-        <TouchableWithoutFeedback onPress={this.onCancelPress.bind(this)}>
+        <TouchableWithoutFeedback>
           <View style={styles.container}>
             <View style={[styles.modal, { width }]}>
               <View style={[styles.buttonview, buttonsViewStyle, { width }]}>
