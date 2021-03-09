@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@react-native-community/eslint-config": "^2.0.0",
     "babel-eslint": "*",
     "babel-preset-react-native": "*",
     "eslint": "*",
@@ -55,5 +56,8 @@
     "react": "16.5.0",
     "react-native": "0.57.2",
     "react-test-renderer": "*"
+  },
+  "dependencies": {
+    "@react-native-picker/picker": "^1.9.11"
   }
 }
